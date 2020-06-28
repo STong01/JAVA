@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>范例15-3</title>
+<script language="javascript">
+function Loaded()
+{
+	for(  n=0; n !=document.documentElement.childNodes.length; n++ )	// 遍历顶级元素的子元素
+	{
+		if( document.documentElement.childNodes[n].nodeName=="BODY" )	// 如果是BODY节点
+		{
+			document.documentElement.childNodes[n].setAttribute("Author","Zognan");// 设置属性
+			break;														// 跳出循环
+		}
+	}
+}
+function Button1_onclick() 
+{
+	for(  n=0; n !=document.documentElement.childNodes.length; n++ )	// 遍历顶级元素的子元素
+	{
+		if( document.documentElement.childNodes[n].nodeName=="BODY" )	// 如果是BODY节点
+		{
+			alert(document.documentElement.childNodes[n].getAttribute("Author"));// 读取属性
+			break;														// 跳出循环
+		}
+	}
+}
+
+</script>
+</head>
+<body onload="Loaded()">
+<h1>
+	DOM编程，处理节点属性
+</h1>
+	<input name="MyButton" id="Button1" type="button" value="查看文档作者" onclick="return Button1_onclick()"  />
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例6-1</title>
+</head>
+<body>
+<script language="javascript">
+    function Sum( arg1, arg2 )              // 数值加法函数
+    {
+        var sarg1 = new String(arg1);       // 将传入的参数转为字符串以便进行参数检查
+        var sarg2 = new String(arg2);       
+        if( (sarg1=="") || (sarg2=="") )    // 确保参数不为空
+        {
+            var e0 = new Error();           // 当有参数为空则抛出异常
+            e0.Serial = 1000001;             
+            if( sarg1=="" )                 // 根据为空的参数正确填写错误信息
+            {
+                e0.message = "Sum函数参数非法：第1个参数为空！";
+            }
+            else
+            {
+                e0.message = "Sum函数参数非法：第2个参数为空！";
+            }
+            throw e0;                       // 抛出错误信息
+        }
+        for( i = 0; i<sarg1.length; i++ )   // 参数合法性检查
+        {
+            for( j=0; j<10; j++ )           // 检查所有字符
+            {
+                if( sarg1.charAt(i)==j )    // 若不是数字则抛出错误信息
+                {
+                    break;
+                }
+                else
+                {
+                    if( j == 9 )
+                    {
+                        var e1 = new Error();   // 错误信息
+                        e1.Serial = 1000001;
+                        e1.message = "Sum函数参数："+sarg1+"是非法数字！";
+                        throw e1;
+                    }
+                }
+            }
+        }
+        for( k = 0; k<sarg2.length; k++ )   // 检查参数2是数字
+        {
+            for( l=0; l<10; l++ )
+            {
+                if( sarg2.charAt(k)==l )
+                {
+                    break;
+                }
+                else
+                {
+                    if( l == 9 )            // 只有包含非数学则抛出错误信息
+                    {
+                        var e2 = new Error();
+                        e2.Serial = 1000001;
+                        e2.message = "Sum函数参数："+sarg2+"是非法数字！";
+                        throw e2;
+                    }
+                }
+            }
+        }
+        return Number(arg1) + Number(arg2);// 参数都正确则返回两个值的和
+    }    
+function Button1_onclick()                 // “计算”按钮的单击事件处理程序
+{
+    try                                    // 提取用户输入的数据
+    {
+        var Text1 = document.getElementById( "Text1" );
+        var Text2 = document.getElementById( "Text2" );
+        var Text3 = document.getElementById( "Text3" );
+        var sum = Sum( Text1.value, Text2.value );  // 调用函数进行计算
+        Text3.value = sum;                 // 输出计算结果
+    }
+    catch( e )                             // 有错误发生则输出错误信息
+    {
+        alert( e.message );
+        if( e.serial == 1000001 )
+        {
+            alert( e.message );
+            e = null;                      // 断开错误对象的引用
+        }
+    }
+}
+</script>
+<!--用户界面，包括三个文本框，一个按钮-->
+    <input id="Text1" type="text" style="width: 84px" maxlength="20" />
+    + <input id="Text2" type="text" style="width: 75px" maxlength="20" />
+    = <input id="Text3" type="text" style="width: 69px" />
+    <input id="Button1" type="button" value="计算" onclick="return Button1_onclick()" />
+</body>
+</html>

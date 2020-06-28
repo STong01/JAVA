@@ -1,0 +1,27 @@
+<title>鼠标点击事件</title>
+<script language="javascript">
+function dclick()						// 双击事件处理程序
+{
+	form1.text.value="您双击了页面！";			// 设置文本框中显示的内容
+}
+function Click()						// 单击事件处理程序
+{
+	form1.text.value+="您单击了页面";
+}
+function down()						// 鼠标按下事件处理程序
+{
+	form1.text.value="您按下了鼠标";
+}
+function up()						// 鼠标键释放事件处理程序
+{
+	form1.text.value="您释放了鼠标";
+}
+</script>
+</head>
+<body onDblclick="dclick()" onMousedown="down()" onMouseup="up()" onClick="Click()" >
+<form id="form1" name="form1" method="post" action="">
+	<label>
+		<textarea name="text" cols="50" rows="2"></textarea>
+	</label>  
+</form>
+</body>

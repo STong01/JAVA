@@ -1,0 +1,11 @@
+<script language="javascript">				//javascrip开始
+document.title="在页面中输出内容"			//给字符串str赋值
+var str="必须用document.writeln()";			//访问document对象的属性
+with(document)
+{
+	writeln("<b>您好,</b>");				//输出粗体的“您好”
+	write("欢迎光临！"+"<br>")				//输出信息并换行
+	writeln("<p><b>在js标签之间,");			//另起一个段落输出相应的内容
+	writeln(str+"在网页中写HTML</b></p>");	//向网页中写入信息
+}
+</script>						

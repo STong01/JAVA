@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>示例5-12</title>
+</head>
+<body>
+<script language="javascript">
+try
+{
+    var fruit = new Array( "鸭梨", "苹果", "葡萄", "李子" );    // 水果
+    for( n=0; n<fruit.length; m++ )                             // 遍历数组，在此人为引发一个异常
+    {
+        document.write( fruit[n] + " " );
+    }
+}
+catch( e )            
+{
+    alert( (e.number&0xFFFF) + "号错误：" + e.description );    // 处理异常
+}
+finally                                                         // finally块中清除数组所占的资源
+{
+    fruit = null;
+    alert( "fruit="+fruit+"已经断开fruit数组的引用！");
+}
+</script>
+</body>
+</html>

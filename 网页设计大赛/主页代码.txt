@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <style>
+            div.button02{
+            position: absolute; top:50%;   left:30%;  margin-left:-230px;   margin-top:-50px 
+           }
+        </style>
+    </head>
+    <body>
+            <img style="width:1350px ;height: 800px;" src="图片/Z)VT47L9RT7A[J)89A8HAZC.jpg">
+            <div class="button02">
+                <center><font face="仿宋加粗" size="8" color="#ffffff">春风得意马蹄疾，一日看尽长安花！</font>
+                    <a href="我爱长安春.html">
+                        <input type="button"value="Welcome to Chang'an!" style="width:500px; height:50px; font-size:36px;margin-right:55px"/>
+                    </a>
+                </center>
+            </div> 
+    </body>
+</html>

@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+div img{
+    position: relative;
+    left: 413px;
+}
+.p{
+    width: 100%;
+    height:258px;
+}

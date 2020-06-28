@@ -1,0 +1,36 @@
+HKCR
+{
+	MessageBoard.MsgBoardCtl.1 = s 'MsgBoardCtl Class'
+	{
+		CLSID = s '{F9C695B2-5569-4F28-88FD-D9EB4E41055E}'
+		'Insertable'
+	}
+	MessageBoard.MsgBoardCtl = s 'MsgBoardCtl Class'
+	{
+		CLSID = s '{F9C695B2-5569-4F28-88FD-D9EB4E41055E}'
+		CurVer = s 'MessageBoard.MsgBoardCtl.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F9C695B2-5569-4F28-88FD-D9EB4E41055E} = s 'MsgBoardCtl Class'
+		{
+			ProgID = s 'MessageBoard.MsgBoardCtl.1'
+			VersionIndependentProgID = s 'MessageBoard.MsgBoardCtl'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 102'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '%OLEMISC%'
+			}
+			'TypeLib' = s '{5F26A915-5F7E-46E3-9205-8E8C4882F22A}'
+			'Version' = s '1.0'
+		}
+	}
+}

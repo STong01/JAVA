@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+<body>
+<script language="javascript">
+	var showStr="";
+	var str = "this word is OKOKOKOKokokokok!!!"; 		//给变量赋初值
+	var searchStr = /(OK){2}/gi; 						//分组的正则表达式
+	var result= str.match(searchStr); 					//查找匹配
+	for (var i = 0; i < result.length; i++)			//循环访问arrdata对象
+	{
+		showStr+=result[i]+"\n"; 						//显示信息
+	}
+	alert("一共有"+result.length+"组匹配\n"+showStr);	//显示最后匹配的结果
+</script>
+</body>
+</html>

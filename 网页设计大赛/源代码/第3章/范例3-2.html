@@ -1,0 +1,44 @@
+<title>范例3-2</title>
+<script language="javascript">
+<!--
+    var str = "21天学通JavaScript!";   	// 定义一个字符串变量
+    var b = true;                   	// 定义一个布尔型变量
+    var n = 10;                     	// 定义一个数值型变量
+    var m;                          	// 声明一个变量m，其类型未知
+    var o = new Object();           	// 定义一个Object类型变量o
+        p = new Object();           	// 定义一个Object类型变量p
+    document.write( str );          	// 分别使用write在当前文档-
+    document.write( "<br>" ); 
+    document.write( b );            	// -对象是输出各变量的内容
+    document.write( "<br>" );
+    document.write( n );
+    document.write( "<br>" );
+    document.write( m );
+    document.write( "<br>" );
+    document.write( o );
+    document.write( "<br>" );
+    document.write( p );
+    document.write( "<br>" );      	// 改写各变量的值
+    str = "这是一个字符串";
+    b = false;
+    n = 20;
+    m = 30;                         	// 改变变量o的引用，指向一个新建的数组
+    o = new Array( "data1", "data2" );
+    document.write( "<font color=red><br>" );	 
+    document.write( str );          	// 分别使用write在当前文档-
+    document.write( "<br>" );       	// -对象是输出各变量的内容
+    document.write( b );            
+    document.write( "<br>" );		// 输出换行标签
+    document.write( n );
+    document.write( "<br>" );		// 输出换行标签		
+    document.write( m );
+    document.write( "<br>" );		// 输出换行标签
+    document.write( "<br>数组o的数据为：" );
+    document.write( o );
+    document.write( "<br>数组o的长度为：" + o.length );
+    document.write( "<br></font>" );
+    var pp;
+    document.write( pp );		// 输出未定义变量PP
+    var pp = 20;
+-->
+</script>

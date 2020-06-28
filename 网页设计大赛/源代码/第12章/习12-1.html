@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>练习12-1</title>
+<script language="javascript">
+function showThisCode()
+{
+	window.location="view-Source:"+window.location.href;
+}
+function showUrlCode()
+{
+	var Url=url.value;
+	if(Url!="http://")
+	{
+		window.location="view-Source:"+Url;
+	}
+	else
+	{
+		alert("您没有输入网址，请输入您的网址！");
+	}
+}
+</script>
+</head>
+
+<body>
+<label>
+	<input type="submit" name="Submit" value="查看本网页源文件" onclick="showThisCode()" />
+	<br />
+	<input type="text" name="url" value="http://"/>
+	<br />
+</label>
+	<label>
+	<input type="submit" name="Submit2" value="查看指定网页的源文件" onclick="showUrlCode()" />
+	</label>
+</body>
+</html>

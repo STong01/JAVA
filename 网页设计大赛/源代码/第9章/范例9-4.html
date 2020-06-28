@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>得到焦点与失去焦点</title>
+<script language="javascript">
+function OnFocus()							// onFocus事件处理程序
+{	
+	Body.style.background="red";	// 网页背景设置为红色
+}
+function OnBlur()								// onBlur事件处理函数
+{
+	Body.style.background="gray";	// 网页背景设为灰色
+}				
+</script>
+</head>
+<body id="Body" onFocus="OnFocus()" onBlur="OnBlur()"><!--绑定事件处理程序-->	
+	<label id="info">失去焦点时窗口背景变为灰色，得到焦点时为红色。
+	</label>
+</body>
+</html>

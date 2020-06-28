@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>猜数字游戏</title>
+<script language="javascript">
+var r=Math.floor(Math.random()*10)+20;						//随机产生一个数字
+var n=5;
+function Select()
+{
+	num.focus();											//文本框获得焦点
+	num.select();											//选中文本框中的内容
+}
+function checkResult()
+{	
+	if(num.value==r)										//判断是否猜中
+	{
+			if(confirm("猜中了，您真棒！\n您还要继续吗？"))//询问用户是否还要继续游戏
+			{
+				document.location="练习13-2.html";			//刷新游戏
+			}	
+			else
+			{
+				self.close();								//关闭窗口退出游戏
+			}
+	}
+	else
+	{			
+		if(n==1)
+		{
+					
+			if(confirm("您的竟猜失败，您还要继续吗？"))		//处理竟猜失败
+			{
+				document.location="练习13-2.html";			//刷新游戏
+			}
+			else
+			{
+				self.close();								//关闭窗口退出游戏
+			}
+		}
+		if(num.value>r)
+		{
+			n--;
+			alert("您猜大了一些！您还有"+n+"次机会");		//提示用户输入过大
+		}
+		else
+		{
+			n--;
+			alert("您猜小了一些！您还有"+n+"次机会");		//提示用户输入过小
+		}
+	}
+}
+</script>
+</head>
+<body>
+<p>猜数字(20-30)</p>
+<p>
+  <input type="text" name="num" onmousemove="Select()" /><!--用户用于输入答案-->
+  <label id="msg"> 您一共有5次机会 </label>
+</p>
+<p>
+  <label>
+  <input type="submit" name="Submit" value="确定"  onclick="checkResult()"/>
+  </label>
+</p>
+</body>
+</html>

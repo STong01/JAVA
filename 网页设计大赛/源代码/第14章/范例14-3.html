@@ -1,0 +1,24 @@
+<script language="JavaScript" type="text/javascript">
+<!--
+	document.cookie="id=828";				//设置一个名为usr值为828的cookie值
+	document.cookie="usr=yx";				//设置一个名为usr值为yx的值
+	var str=document.cookie;				//获取cookie字符串	
+	var arr=str.split("; ");				//将多cookie切割为多个名/值对
+	var userIndex="";						//定义一个空字符串
+	var i=0;								//定义一个变量并赋值0
+	while(i<arr.length)					//遍历cookie数组，处理每个cookie对			
+		{
+			var arrs=arr[i].split("=");	//用“=”将cookie的名与值分开
+			if("id"==arrs[0])				//找到名称为user的cookie，并返回它的值
+			{
+				userIndex=arrs[1];			//将获取的值保存在变量userIndex中
+				break;						//结束循环
+			}
+			i++;							//变量i加1
+		}
+	if(userIndex!="")						//判断所要查找的值是否存在
+		alert(userIndex);					//输出userIndex的值
+	else
+		alert("查无此值")					//没有查到要查的值
+//-->
+</script>

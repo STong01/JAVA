@@ -1,0 +1,25 @@
+<html>
+<head>							<!--文档的头-->
+<script language="javascript">	//javascrip开始  
+function openWin()   
+{   
+	newWindow=window.open("","", "height=250, width=250,toolbar=no,enubar=no");//新建一个窗口   
+ 
+	newWindow.document.write("<title>例子</title>")			// 向新窗口中写入HTML的title     
+	newWindow.document.write("<body bgcolor=#ffffff>")		// 向新窗口中写入HTML的body 		  
+	newWindow.document.write("<h1>Hello!</h1>")				//设置新窗口内容的主标题   
+	newWindow.document.write("New window opened!")			//在新窗口中写入内容   
+	newWindow.document.write("</body>")						//新窗口主体结束标签   
+	newWindow.document.write("</html>") 					//新窗口html结束标签
+	newWindow.document.close()								//关闭文档流   
+}   
+</script>   
+</head>   
+<body> 
+<!--  调用openWin()函数,打开一个新窗口-->  
+<a href="#"onClick="openWin()">打开一个窗口</a>				<!--用链接的方式打开新窗口-->
+<input type="button" onClick="openWin()" value="打开窗口"> 	<!--用按钮的方式打开新窗口-->  
+</body>   
+</html>   
+
+

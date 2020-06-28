@@ -1,0 +1,14 @@
+<script language="javascript">								//javascript程序
+function OnClick()									//按钮事件处理
+{
+	for (i=0;i<window.frames.length;i++)						//逐一访问框架
+	{
+		window.frames[i].document.write("向第" + (i+1) + "个子窗口输出内容");	//在子窗口文档中输入
+		window.frames[i].document.close();					//关闭输出
+	}
+}
+</script>										<!--框架1-->
+<iframe src="#" height="50"></iframe><br/>						<!--框架2-->
+<iframe src="#" height="50"></iframe><br/>						<!--框架3-->
+<iframe src="#" height="50"></iframe><br/>						<!--框架4-->
+<input type="button" value="查看窗口的内容" onClick="OnClick()">			<!--按钮-->

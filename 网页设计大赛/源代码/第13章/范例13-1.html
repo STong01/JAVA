@@ -1,0 +1,37 @@
+<html>
+<HEAD>
+	<title>范例13-1</title>
+</head>
+<script language="javascript">
+function setCase (caseSpec)
+{
+	if (caseSpec == "upper")
+	 {
+		   //将First name转换成大写
+		   document.myForm.firstName.value=document.myForm.firstName.value.toUpperCase();
+		   //将lastName转换成大写
+		   document.myForm.lastName.value=document.myForm.lastName.value.toUpperCase();
+	  }
+	else
+	 {
+	 		//将First name转换成小写
+		   document.myForm.firstName.value=document.myForm.firstName.value.toLowerCase();
+		    //将lastName转换成小写
+		   document.myForm.lastName.value=document.myForm.lastName.value.toLowerCase()
+	  }
+}
+</script>
+<body>
+<form name="myForm">
+	<p><B>First name:</B>
+	    <input type="text" name="firstName" size=20>
+    </p>
+	<p>
+	    <B>Last name：</B>
+	    <input type="text" name="lastName" size=20>
+    </p>
+	<P><input type="button" value="转换成大写" name="upperButton"onClick="setCase('upper')">
+	<input type="button" value="转换成小写" name="lowerButton" onClick="setCase('lower')">
+</form></P>
+</body>
+</HTML>

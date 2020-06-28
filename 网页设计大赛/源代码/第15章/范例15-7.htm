@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例15-7</title>
+<script language="javascript" type="text/javascript">
+function IMG1_onclick(obj)					// 鼠标单击事件处理程序
+{
+	alert("这个图片的地址是：" + obj.src);	// 在信息框中显示图片地址
+	return true;							// 返回true让浏览器选择默认操作
+}
+function IMG1_onmouseover(obj)				// 鼠标移过事件处理程序
+{
+	obj.src = "resource/btn_over.png";		// 设置鼠标移过状态图片的地址
+}
+function IMG1_onmouseout(obj)				// 鼠标移出事件处理程序
+{
+	obj.src = "resource/btn_normal.png";	// 设置鼠标移出状态图片的地址
+}
+function IMG1_onmousedown(obj)				// 鼠标按下事件处理程序
+{
+	obj.src = "resource/btn_down.png";		// 设置鼠标按下状态图片的地址
+}
+</script>
+</head>
+<body>
+	<!--设置图片框属性，并绑定事件处理程序-->
+	<img id="IMG1" src="resource/btn_normal.png"
+	 onclick="return IMG1_onclick(this)" 
+	 onmouseout="return IMG1_onmouseout(this)"
+	 onmousedown="return IMG1_onmousedown(this)"
+	 onmouseover"return IMG1_onmouseover(this)"/>
+</body>
+</html>

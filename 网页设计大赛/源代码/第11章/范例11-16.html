@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>范例11-16</title> 							<!--文档的标题-->
+</head>
+<body>
+<script language="javascript">
+delay = 1000;										//设置图片显示的时间间隔
+imageNum = 1 
+theImages = new Array()								// 创建一个Image()对象，并给数组赋值
+for(i = 1; i < 7; i++)
+{
+   theImages[i] = new Image()						//创建一个新的Image对象
+   theImages[i].src = "pic/pic" + i + ".jpg"
+} 
+function animate() 
+{
+   document.animation.src = theImages[imageNum].src //显示图片
+   imageNum++										//图片索引
+   if(imageNum >6)									//显示到最后一张时跳到第一张
+    {
+      	imageNum = 1
+	 }
+}
+</script>
+  <div align="center">
+  <img name="animation" src="image1.gif" alt="正在加裁图片请稍等....'" onLoad="setTimeout('animate()', delay)" onerror="this.src='flower.jpg'" height="100"> </div><!--触发onerro、onLoad事件-->
+</body>
+</html>

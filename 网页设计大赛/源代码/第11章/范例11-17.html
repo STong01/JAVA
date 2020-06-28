@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>范例11-17</title>
+     <meta http-equiv="content-type" content="text/html; charset=gb2312">
+     <script language="javascript">
+     <!--
+		function showProps(pic)
+		{ 			 	
+			 var str="Image Properties\n\n";			//定义一个str字符串，并为其赋值
+			 str += "alt: "+pic.alt + "\n"; 			//在字符串内添加图像的alt属性信息               
+			 str += "border: "+pic.border + "\n";  		//alt在字符串内添加图像的边框信息                
+			 str += "complete: "+pic.complete + "\n"; 	//在字符串内添加图像是否载入的信息                 
+			 str += "height: "+pic.height + "\n";		//在字符串内添加图像的高度信息                 
+			 str += "hspace: "+pic.hspace + "\n";		//在字符串内添加图像的hspace属性信息           
+			 str += "lowsrc: "+pic.lowsrc + "\n";		//在字符串内添加图像的lowsrc属性信息                
+			 str += "name: "+pic.name + "\n"; 			//在字符串内添加图像的名称信息                
+			 str += "src: "+pic.src + "\n"; 			//在字符串内添加图像的src属性信息                 
+			 str += "vspace: "+pic.vspace + "\n";		//在字符串内添加图像的vspace属性信息                
+			 str += "width: "+pic.width + "\n"; 		//在字符串内添加图像的宽度信息
+			 alert(str); 								//弹出一个对话框，显示图像的相关属性信息
+	   }
+    //-->
+    </script>
+</head>
+<body>
+<center>
+    <h1>访问图像属性</h1><p>
+        <img src="flower.jpg" alt="The Image" lowsrc="flower.jpg" id="testimage" name="testimage" width="200" height="150" border="1"hspace="10" vspace="15"> <br><br><!--定义一个<img>，并设置其相关属性-->
+<form action="#" method="get">
+      <!--通过onclick调用showProps函数，显示图像的名称-->
+      <input type="button" value="显示属性"onclick="showProps(document.images['testimage']);">
+     <!--通过onclick使用新图像替换原来的图像-->
+      <input type="button" value="替换图像"onclick="document.testimage.src='flower1.jpg';"><p>
+      <!--通过onclick重新载入原来的图像-->
+      <input type="button" value="重新载入原图像" onClick="document.testimage.src='flower.jpg';">
+</form>
+</center>
+</body>
+</html>

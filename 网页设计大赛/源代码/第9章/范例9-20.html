@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>取消延迟执行</title>
+<script language="javascript">
+function showClock()
+{
+ d=new Date()
+ //document.form1.Time.value=d.toLocaleString()
+ window.status=d.toLocaleString()
+ ident=window.setTimeout("showClock()",1000);
+}
+</script>
+</head>
+<body>
+  <p>
+   <input type="submit" name="Submit" value="开始" onClick="showClock()"> 
+   <input type="submit" name="Submit2" value="取消延迟" onClick="window.clearTimeout(ident);")>
+   </p>
+</body>
+</html>

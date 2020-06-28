@@ -1,0 +1,29 @@
+<html>
+<head>
+<script language="javascript">
+function hideContextmenu1()
+{
+	alert("1，这时静态绑定的鼠标右键单击事件处理程序");	// 显示信息，以表示已经执行这个程序
+	window.event.returnValue = false;// 将返回值设置false表示事件未处理，使下一个处理程序有机会执行
+	document.oncontextmenu = hideContextMenu2;		// 再次动态绑定一个右键单击事件处事程序
+}
+</script>
+<script language="javascript">
+function hideContextMenu2()
+{
+	alert("2，动态设定的右键单击事件处理程序");		// 显示信息，以表示已经执行这个程序
+	window.event.returnValue = false;// 将返回值设置false表示事件未处理，使下一个处理程序有机会执行			
+}
+</script>
+<!-- 直接设置元素对象的事件属性 -->
+<script language="javascript" for="document" event="oncontextmenu">
+	window.event.returnValue=false;
+	document.oncontextmenu = hideContextMenu2;		// 再次动态绑定一个右键单击事件处事程序
+	alert("3，通过在<script>标签中指定右键单击事件处理程序");
+</script>
+</head>
+<!--静态绑定的鼠标右键单击事件处理程序-->
+<body oncontextmenu="hideContextmenu1()">
+已经屏蔽了鼠标右键菜单，请单击鼠标右键
+</body>
+</html>

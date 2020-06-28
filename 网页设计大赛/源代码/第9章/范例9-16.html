@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>范例9-16</title>
+	<body>
+		<script language="javascript">
+			var tm = setInterval( "ScroWin()", 100 );	// 设定计时器
+			function ScroWin()												// 定时器函数
+			{
+				window.scrollBy( 0, 1 );								// 向上滚动1px	
+			}
+		</script>
+		浏览器中的内容大于其显示区域时，<br>
+		一般会出现滚动条方便查看被遮挡的内容。<br>
+		用户可以拖动滚动条，也可以通过程序来控制窗口的滚动。<br>
+		调用window对象的scrollBy或scrollTo方法即可滚动文档，<br>
+		在一些设计比较人性化的文章阅读页面上就看到这样的应用，<br>
+		文章自动上滚，方便阅读<br>
+	</body>
+</html>

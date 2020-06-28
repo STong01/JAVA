@@ -1,0 +1,39 @@
+<head>
+    <title>我爱大雁塔</title>
+</head>
+    <body>
+            <center>
+        <h1><center>大雁塔</center></h1>
+        <p>陕西省西安市著名的旅游景点</p>
+        <p>民间人士道：“不到大雁塔，不算到西安。”</p>
+        <p>大雁塔是西安市的标志性建筑和著名古迹</p>
+        <p>是古城西安的象征</p>
+        
+        <p>
+        <img src="图片/大雁塔 (3).jpg" width="700" height="300" />
+        </p>
+        <p>
+        <p>历史背景</p>
+        <p>为玄奘法师为供奉从印度带回的佛像、舍利和梵文经典而建起大雁塔</p>
+        <p>后来大雁塔在唐代就是著名的游览胜地</p>
+        <p>因而留有大量文人雅士的题记</p>
+        <p>是唐代高僧玄奘专门从事译经和藏经之处</p>
+        </p>
+        <p>
+        <img src="图片/大雁塔 (2).jpg" width="700" height="300" />
+        </p>
+        <p>
+        <p>《礼慈恩寺题诗》</p>
+        <p>玄奘译经垂千秋，</p>
+        <p>慈恩古刹闻九州。</p>
+        <p>雁塔巍然立大地，</p>
+        <p>曲江陂头流饮酒！</p>
+        </p>
+        <p>
+        <img src="图片/大雁塔 (1).jpg" width="700" height="300" />
+        </p>
+        <a href="我爱长安春.html">
+            <input type="button"value="返回上一页!" style="width:500px; height:50px; font-size:36px;margin-right:55px"/>
+        </a>
+        </center>
+    </body>

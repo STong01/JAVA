@@ -1,0 +1,22 @@
+<title>范例4-12</title>
+<script language="javascript">
+<!--
+    var a = 5;
+    document.write( a );	 // 输出a原来的值
+    document.write( "<br>" );
+    a-- ;			 // a自减一（右结合）
+    document.write( a );
+    document.write( "<br>" );
+    --a;			 // a自减一（左结合）
+    document.write( a );
+    document.write( "<br>" );
+    if( --a == 2 )		// 测试左、右结合位于表达式中的情况
+    {
+        document.write( "<li>左结合的情形" );
+    }
+     if( a-- == 2 )
+    {
+        document.write( "<li>右结合的情形" );
+    }
+-->
+</script>

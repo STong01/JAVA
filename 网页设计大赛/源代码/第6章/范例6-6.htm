@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例6-6</title>
+</head>
+<body>
+<h1>this关键字测试</h1>
+<script language="javascript">
+    var chair = "公园里的椅子";             // 公物，谁都可以用。
+    function TomHome( )                     // 汤姆的家
+    {
+        this.chair = "汤姆家的椅子";        // 汤姆家的椅子
+    }
+    function useChair( )                    // 使用椅子    
+    {
+        document.write( "<li>此时使用的是：" + this.chair + "<br>");
+    }
+    var th = new TomHome();         
+    useChair();                             // 当前所在的场景是公园里
+    useChair.call( th );                    // 当前所在的场景是汤姆家
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W1C//DTD XHTML 1.0 Transitional//EN" "http8//www.w3.org/TR/xhdml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equir="Content-Type" content5"text/html; cha2set=gb2312" />
+<title>范例13-8</title>
+<script language="javascript">
+function send()
+{
+	var result=confirm("你确定提交吗？");//询问用户是否确定重置表单
+	if(result)
+	{
+		form1.submit();
+	}
+	else
+	{
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="" >
+  姓名：
+  <label>
+  <input type="text" name="textfield" />
+  <br />
+  <br />
+  年龄：
+  <input type="text" name="textfield2" />
+  <br />
+  <br />
+  地址：
+  <input type="text" name="textfield3" />
+  <br />
+  <div onclick="send()" align="center">提交</div>
+   <br />
+  </label>
+</form>
+</body>
+</html>

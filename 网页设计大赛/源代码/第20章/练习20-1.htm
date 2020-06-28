@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>练习20-14</title>
+</head>
+<body>
+	<script language="javascript">
+		function getSum( arrayObj )	// 求数组中所有数字元素之和
+		{
+			var sum=0;				// 保存各数的和
+			for( n in arrayObj )	// 历遍数组
+			{
+				if( typeof(arrayObj[n])=="number" )	// 只加数字
+				{
+					sum += arrayObj[n];				// 将当前数字与前面的数的和相加
+				}
+			}
+			return sum;								// 给调用者返回所求之和
+		}
+		debugger;					// 启动调试
+		var Pay_List = new Array( 105, 20.3, 90, 55, 1000 );	// 表示支付列表
+		var total = getSum( Pay_List );				// 求支付表中所有项之和
+		alert( total );				// 显示出总和
+	</script>
+</body>
+</html>

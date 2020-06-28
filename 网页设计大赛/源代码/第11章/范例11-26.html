@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>范例11-26</title>							<!--文档的标题-->
+</head>												<!--文档的头-->
+<body>												<!--文档的主体-->
+<script language="javascript">						//JavaScript程序
+// 打开一个窗口，窗口名为newWindow，宽为250，高为100
+window2=open("link2.html","newWindow", "scrollbars=yes,width=250, height=150")
+function toWin(num) 
+{
+   if (window2.document.anchors.length > num)		//判断锚的数量是否为空
+   {
+      window2.location.hash=num;					//链接到对应的锚
+	  window2.focus();								//链接的窗口得到焦点
+	}
+    else
+   {
+      alert("锚不存在！");	  						//当锚不存在时提示用户
+	}
+}
+</script>
+<b>链接和锚</b>										<!--粗体的字-->
+<form>
+	<P>单击一个按钮可以在窗口 2 中显示对应的锚<P>	
+	<input type="button" value="主板型号" name="link0_button" onClick="toWin(0)"><!--查找锚0-->
+	<input type="button" value="CPU型号" name="link0_button" onClick="toWin(1)"><!--查找锚1-->
+	<input type="button" value="硬盘型号" name="link0_button"onClick="toWin(2)"><!--查找锚2-->
+	<input type="button" value="内存型号" name="link0_button" onClick="toWin(3)"><!--查找锚3-->
+	<input type="button" value="***" name="link0_button"onClick="toWin(this.value)"><!--没有锚的情况-->
+	</P></P>	
+</form>
+</body>
+</html> 

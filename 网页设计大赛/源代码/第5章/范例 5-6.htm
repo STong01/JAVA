@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例5-6</title>
+</head>
+<body>
+    <div style="width: 261px; height: 70px; background-color: #cccccc;" id="NameList" align="center">
+    </div>
+    <script language="javascript">
+        var names = new Array( "Lily", "Tomson", "Alex", "Jack" );  // 名单
+        for( i = 0; i< names.length; i++ )                          // 遍历名单
+        {
+            var tn = document.createTextNode( names[i] + " " );     // 创建一个文本节点，内容为名单上当前名字
+            var nameList = document.getElementById( "NameList" );   // 找出层NameList
+            nameList.appendChild( tn );                             // 将文本节点添加到层NameList上
+        }
+    </script>
+</body>
+</html>

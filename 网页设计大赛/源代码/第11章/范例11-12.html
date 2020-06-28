@@ -1,0 +1,23 @@
+<html>
+<head>														<!--文档的头-->
+<title>范例11-12</title>									<!--文档的标题-->
+</head>
+<body>														<!--文档的主体-->
+<h1>忆江南·怀旧</h1>										<!--一级标题-->
+<hr/>														<!--水平线 -->
+	<p>多少恨 ，<em>昨夜梦魂中</em>。 还似旧时游上苑</p>	<!--带文本的段落-->
+	<p> <em>车如流水马如龙</em></p>
+	<p> <em id="special">花月正春风</em></p>
+<hr/>														<!--水平线 -->
+<script	language="javascript">
+	var i;													//定义变量i
+	var sum;												//定义sun变量	
+	sum = document.all.length;								// 取得元素的个数	
+	document.write('document.all.length='+sum+"<br />");	// 输出元素的个数
+	for (i = 0; i < sum; i++)								//循环访问
+	{
+		document.write("document.all["+i+"]="+document.all[i].tagName+"<br />");// 输出各元素
+	}
+</script>
+</body>
+</html>

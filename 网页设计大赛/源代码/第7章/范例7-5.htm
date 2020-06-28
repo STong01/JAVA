@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例7-5</title>
+</head>
+<body>
+<script language="javascript">
+    var appleBox = new Array();
+    appleBox.push( "红苹果1", "红苹果2", "红苹果3", "红苹果4", "红苹果5", "红苹果6" );
+    for( ;appleBox.length != 0; )
+    {
+        var handle = appleBox.pop();
+        document.write( "<br>已发：" + handle );
+    }
+    alert( "苹果已经分光~！" );
+</script>
+</body>
+</html>

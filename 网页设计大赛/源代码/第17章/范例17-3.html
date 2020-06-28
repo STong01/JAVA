@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+    <title>范例17-3</title>																						<!--标题-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<!--元数据-->
+</head>
+<body>																																<!--文档体-->
+	用户名：<input id="Text1" type="text" onblur="OnBlur(this)"/>				<!--用户名文本框-->
+<span id="IdCheck" style="width: 153px;height: 10px">									<!--提示标签-->
+(填入用户名，例如admin)<div id="message">															
+</div></span> 
+<script lnaguage="jvascript">																					// 脚本开始
+	var xmlHtpRq;																												// 保存XMLHttpRequest对象引用
+	function OnStatusChange()																						// 状态事件处理程序
+	{
+		if (xmlHtpRq.readyState == 4) 																		// 正常响应状态
+		{
+			if (xmlHtpRq.status == 200)																			// 正确的接收响应数据
+			{
+				document.getElementById('message').innerHTML = xmlHtpRq.responseText;	// 设置提示信息
+			} 
+			else																														// 状态不正常
+			{
+				document.getElementById('message').innerHTML = xmlHtpRq.status;	// 输出状态码
+			}
+		}
+	}
+	function OnBlur( obj )																							// 文本框失去焦点时执行
+	{
+		xmlHtpRq = new ActiveXObject("Microsoft.XMLHTTP");								// 创建XMLHttpRequest对象
+		url = "http://localhost/server.php?username=" + obj.value;				// 构建URL
+		xmlHtpRq.open('GET', url, true);																	// 打开连接
+		xmlHtpRq.onreadystatechange = OnStatusChange;											// 注册状态事件侦听器
+		xmlHtpRq.send(null);																							// 发送请求
+	}
+    </script>
+</body>
+</html>

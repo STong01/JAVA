@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例15-10</title>
+</head>
+<body>
+<script language="javascript">
+	if( document.implementation.hasFeature( "XM", "1.0" ) )		// 是否支持XML1.0
+	{
+		document.write("<b>提示：</b>当前浏览器不支持XML1.0");	// 支持时输出
+	}
+	else
+	{
+		document.write("<b>提示：</b>当前浏览器支持XML1.0");	// 不支持则输出
+	}
+</script>
+</body>
+</html>

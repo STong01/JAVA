@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>取得地址对象的属性</title>
+		<script language="javascript">
+			function getMsg()
+			{
+				url=window.location.href;
+				with(document)
+				{
+					write("地址的协议："+location.protocol+"<br>");
+					write("地址的主机名："+location.hostname+"<br>");
+					write("地址的主机和端口号："+location.host+"<br>")
+					write("取得路径名："+location.pathname+"<br>");
+					write("取得整个地址："+location.href+"<br>");
+				}				
+			}
+		</script>
+	</head>		
+	<body>
+		<input type="submit" name="Submit" value="取得地址对象的属性" onclick="getMsg()" />
+	</body>
+</html>

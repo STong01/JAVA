@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>											<!--文档的头-->
+	<title>范例13-15</title>
+	<script language="javascript">
+		var startLen=40;							// 设置文本初始值
+		function check()
+		{
+			var len=form1.text.value.length;		//取得文本输入的字符数
+			if(len>=startLen)
+			{
+				startLen=startLen*4;				//将文本字符数变为4倍
+				form1.text.cols=form1.text.cols*2;	//文本宽加倍
+				form1.text.rows=form1.text.rows*2; 	//文本行数加倍
+			}
+		}
+	</script>									
+	</head>									
+	<body>											<!--文档的主体部分-->
+	<form id="form1" name="form1" method="post" action="">	<!--表单-->
+  <label>											<!--标签-->
+	  <textarea name="text" onkeyup="check()"></textarea>	<!--文本框响应键盘事件-->
+	  </label>										
+	</form>											
+</body>
+</html>										

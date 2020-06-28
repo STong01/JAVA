@@ -1,0 +1,11 @@
+<script>													//javascrip开始
+	var str="     欢迎光临本站!"							//给字符串赋初值
+	function titleMove()
+	{   
+	   	str=str.substring(1,str.length)+str.substring(0,1);	//设置当前标题栏和状态栏中要显示的字符
+		document.title=str;									//重新设置文档的标题
+		status=str;											//设置状态栏的信息
+	}
+	if(str.length>20)str="     欢迎光临本站!";		//如果字符数大于指定的长度时，让它变成初始状态			
+	setInterval("titleMove()",100);							// 调节滚动速度
+</script>//javascrip结束  

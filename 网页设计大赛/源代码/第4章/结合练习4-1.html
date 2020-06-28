@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>◊€∫œ¡∑œ∞4-1</title>
+</head>
+<body>
+<script language="javascript">
+<!--
+var msgCoded;
+var msgEncoded;
+function CodeAndEncode( pkey, date )
+{
+    var codedStr = "";
+    for( i = 0; i<date.length; i++ )
+    {
+		var dateCoded;
+		for( j = 0; j<pkey.length; j++ )
+		{
+			var keyCoded = pkey.charCodeAt( j );
+			var dateCoded = date.charCodeAt(i) ^ keyCoded;
+		}
+        codedStr += String.fromCharCode( dateCoded );
+    }
+	return codedStr;
+}
+function BtnCode_onclick()
+{
+    var date = TextArea1.value;
+    var key = Password1.value;
+    msgCoded = CodeAndEncode( key, date );
+    TextArea1.value = msgCoded;
+}
+function BtnEncode_onclick() 
+{
+     var date = TextArea1.value;
+     var key = Password1.value;
+     msgEncoded = CodeAndEncode( key, date );
+     TextArea1.value = msgEncoded;
+}
+
+--> 
+</script>
+
+    &nbsp;<textarea id="TextArea1" style="width: 331px; height: 211px"></textarea>&nbsp;<br />
+    √‹‘ø£∫&nbsp;
+    <input id="Password1" type="password" />&nbsp;
+    <input id="BtnCode" type="button" value="º”√‹" onclick="return BtnCode_onclick()" style="width: 57px" />
+    <input id="BtnEncode" style="width: 55px" type="button" value="Ω‚√‹" onclick="return BtnEncode_onclick()" />
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>范例19-2</title>
+</head>
+<body>
+<h1 align="center">JavaScript与Applet交互</h1>
+<p align="center">
+<!--使用applet标签嵌入JavaApplet程序-->
+<applet code="MessageBoard.class" width="400" height="20" name="msgboard"></applet>
+</p>
+<script language="JavaScript"> 
+<!-- 
+var messageList = new Array();                  // 创建一个消息数组
+messageList.push("消息：Applet与JavaScript结合，可以使WEB页实现非常棒的效果！");
+messageList.push("消息：Applet，强大的交互能力和富体验效果！");
+var index = 0;                                  // 消息号
+function SetMessage()                           // 按钮的单击事件处理程序
+{ 
+    index++;                                    
+	document.msgboard.set_strMessage( messageList[index%2] ); // 设置下消息数组中的下一条消息
+} 
+//--> 
+</script>
+<div align="center">
+<!--更换消息的按钮-->
+<input type="button" value="显示下一条消息" onclick="SetMessage()">
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>横向运动的图片</title>
+<script language="javascript">
+var v=120;
+var h=0;
+var i=0;
+var k=1;
+function move()
+{
+	pic.vspace=v;
+	pic.hspace=h;
+	i++;
+	if(i%20==0)k++;
+	if(k%2==0)
+	{
+		pic.src="flower1.jpg";
+	}
+	else
+	{
+		pic.src="flower.jpg";
+	}	
+	if(i>400)
+	{
+		h=h-2;
+	}
+	else
+	{
+		h+=2;
+	}
+	if(i==800)i=1;
+}
+</script>
+</head>
+<body onload="setInterval('move()',100)" >
+<img src="flower1.jpg" vspace="1"  hspace="100" name="pic" height="100"/>
+</body>
+</html>

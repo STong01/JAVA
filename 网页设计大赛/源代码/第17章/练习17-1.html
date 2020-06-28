@@ -1,0 +1,141 @@
+<html>
+	<head>
+		<title>Ajax实例</title>
+		<script language="javascript" type="text/javascript">
+		<!--
+			var chapter=new Array(10);
+			var len=chapter.length;
+			chapter[0]="chapter/1.txt";
+			chapter[1]="chapter/2.txt";
+			chapter[2]="chapter/3.txt";
+			chapter[3]="chapter/4.txt";
+			chapter[4]="chapter/5.txt";
+			chapter[5]="chapter/6.txt";
+			chapter[6]="chapter/7.txt";
+			chapter[7]="chapter/8.txt";
+			chapter[8]="chapter/9.txt";
+			chapter[9]="chapter/10.txt";
+			//定义一个变量，用于存放XMLHttpRequest对象
+			var xmlHttp;
+			//定义一个用于创建XMLHttpRequest对象的函数
+			function createXMLHttpRequest()
+			{
+				if (window.ActiveXObject)
+				{
+					//IE浏览器中的创建方式
+					xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				else if (window.XMLHttpRequest)
+				{
+					//Netscape浏览器中的创建方式
+					xmlHttp = new XMLHttpRequest();
+				}
+			}
+			
+			//响应HTTP请求状态变化的函数
+			function httpStateChange()
+			{
+				//判断异步调用是否完成
+				if (xmlHttp.readyState==4)
+				{
+					//判断异步调用是否成功，如果成功则开始局部更新数据
+					if (xmlHttp.status==200 || xmlHttp.status==0)
+					{
+						
+						//更新数据
+						wz.value = xmlHttp.responseText;
+					}
+					else
+					{
+						//如果异步调用未成功，弹出警告框，并显示出错信息
+						alert("异步调用出错\n返回的HTTP状态码为：" + xmlHttp.status + "\n返回的HTTP状态信息为：" + xmlHttp.statusText);
+					}
+				}
+			}
+			
+			//异步调用服务器端数据
+			function getData(page)
+			{
+				var str=chapter[page-1];
+				//创建XMLHttpRequest对象
+				createXMLHttpRequest();
+				if (xmlHttp!=null)
+				{
+					//创建HTTP请求
+					xmlHttp.open("get",str,true);
+					wz.value="";
+					//设置响应HTTP请求状态变化的函数
+					xmlHttp.onreadystatechange = httpStateChange;
+					//发送请求
+					xmlHttp.send(null);
+				}
+			}
+			function changePage(str)
+			{
+				var n=page.value;
+				if(str=='up')
+				{
+					if(n==1)
+					{
+						alert("当前已经是第一页了！");
+					}
+					else
+					{
+						n=n-1;
+						page.value=n;
+						getData(n);
+					}
+				}
+				else if(str=='next')
+				{
+					if(n==len)
+					{
+						alert("当前已经是最后一页了!");
+					}
+					else
+					{
+						n++;
+						page.value=n;
+						getData(n);
+					}
+				}
+				else
+				{
+					if(page.value==0)page.value=1;
+					getData(page.value);
+				}
+					
+			}
+				
+		-->
+		</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312"><style type="text/css">
+<!--
+body {
+	margin-left: 112px;
+}
+-->
+</style></head>
+	<body>
+		<table width="800" border="0">
+          <tr>
+            <td align="center"><textarea name="wz" cols="100" rows="40"></textarea></td>
+          </tr>
+        </table>
+		<p>
+		  <label>
+		  <input type="button" name="Submit" value="上一页" onClick="changePage('up')">
+		  </label>
+          <label>
+          <input type="submit" name="Submit2" value="下一页" onClick="changePage('next')">
+         转到第          </label>
+          <label></label>
+	      <label>
+	      <input name="page" type="text" value="1" size="4" maxlength="2">
+	      页
+	      <input type="submit" name="Submit3" value="GO" onClick="changePage('t')">
+	      </label>
+	      一共有10篇文章
+		</p>
+		</body>
+</html>

@@ -1,0 +1,17 @@
+<title>replace(url)方法</title>
+<script>
+var pos = 0  
+	function test() 
+	{ 
+		str=window.location; 
+		str=str.replace('/'); 
+		window.location.str; 
+	} 	　　
+	function goUrl()
+	 { 
+	　　 pos++ 
+	　　 location.replace("http://www.baidu.com#" + pos) 
+	　} 
+</script>
+<input type="button" value="取消" onclick="test()" class="button" /> 
+<input type=button value="加载新页面" onclick="goUrl()"> 

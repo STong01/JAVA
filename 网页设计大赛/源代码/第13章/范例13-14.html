@@ -1,0 +1,29 @@
+	<html>
+		<head>
+			<title>范例13-14</title>											<!--文档标签-->
+			<script language="javascript" type="text/javascript">				//javascript程序
+			<!--
+				function colorChange()											//自定义函数
+				{
+					document.fgColor = document.myForm.fgColors.value;	 		//设置文字颜色
+					document.bgColor = document.myForm.bgColors.value;			 //设置背景颜色
+				}
+			-->
+			</script>												
+		</head>													
+		<body>
+		<form name="myForm" >													<!--表单-->
+				<h1 align="center"> WinRar </h1>								<!--一级标题-->
+			&nbsp;&nbsp;&nbsp;&nbsp;								
+				<p><strong>WinRAR</strong> 是 <strong>32 位 Windows 版本的 RAR 压缩文件管理器</strong> -一个允许你创建、管理和控制压缩文件的强大工具。存在一系列的 RAR 版本，应用于数个操作系	统环境：<strong>Windows</strong> 、<strong>Linux、   FreeBSD 、DOS、OS/2、MacOS X</strong>	</p>															<!--段落结束-->
+		  <p>												
+			  文字颜色：
+			  <input type="text" value="#fffff" name="fgColors">				<!--前景色调色文本框-->
+			  <br>																<!--换行-->
+			  背景颜色：
+			  <input type="text" value="#000000" name="bgColors">				<!--背景色调色文本框-->
+			  <br>																<!--换行-->
+			  <input type="button" value="调色" onClick="colorChange()">		<!--调用调色按钮-->
+		  		</form>															<!--表单结束-->
+		</body>
+</html>												

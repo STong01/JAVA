@@ -1,0 +1,35 @@
+	<html>	
+		<head><title>范例12-5</title>							<!--文档的标题-->
+		<script language="javascript">							//javascript	
+		function init()
+		{
+			var str=window.location.href						//取得当前的地址
+			var pos=str.indexOf("?");							//以?为标志找其所在位置
+			if(pos==-1)											//如果pos为1则说明没有参数
+			{
+				text.value="无参数";							//显示结果没有参数
+			}
+			else
+			{			
+				var strs=str.substring(pos+1,str.length);		//取?后的字符
+				var strValue=strs.split('&');					//以&为将字符串strs分成几部分,分别存放在数组strValue中
+				var i=0;
+				while(i<strValue.length)						//遍历数组取中的值显示出来	
+				{
+					text.value+=strValue[i]+"\r\n";				//在文本框中显示结果,一个参数一行
+					i++;										//变量加1
+				}	
+			}			
+		}						
+		</script>													<!--结束javascript -->
+	</head>															<!--结束头-->
+	<body onLoad="init()">											<!--自动调用init-->
+	  <label>														<!--标签-->
+	  <div align="center">											<!-- div标签-->
+	    <p>															<!--段落-->
+	      <textarea name="text" rows="10"></textarea> </p>			<!--文本域-->
+	     <p><a href="范例12-5.html?id1=15&id2=16&id3=17&id4=19&id5=21&id9=456">查看本链接参数
+	</a></p>														<!--段落-->
+	  </div>														<!--结束div -->
+  </label>															<!-- 结束-->
+</body>														

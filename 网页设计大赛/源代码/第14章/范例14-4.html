@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>cookie编码解码</title>
+<script language="javascript">
+function SetCookie(name,value)
+{　
+  window.document.cookie= name + "=" + escape(value)+";";// 设置cookie
+  alert("设置成功！");
+  
+}
+function GetCookie(cookieName,codeFind) 
+{
+	var cookieString = document.cookie;   				//获取cookie 
+	var start = cookieString.indexOf(cookieName + '=');//获取cookie的名
+	if (start == -1) 									//若不存在该名字的Cookie
+	return null;
+	start += cookieName.length + 1;
+	var end = cookieString.indexOf(';', start);			//获取cookie的值
+	if(codeFind==1)
+	{
+		if (end == -1) 									//防止最后没有加“;”冒号的情况            
+		return unescape(cookieString.substring(start));
+		
+		return unescape(cookieString.substring(start, end));// 以编码的方式返回cookie值
+	}
+	else
+	{
+		if (end == -1)									 //防止最后没有加“;”冒号的情况            
+		return cookieString.substring(start);
+		
+		return cookieString.substring(start, end);		//以非编码的方式返回cookie值
+	}
+	
+}
+
+function setValue()
+{
+ 	if(Name.value!="")
+	{
+		SetCookie(Name.value,Value.value);   			//取得文本框的值并调用函数设置cookie
+		Value.value="";
+		Name.value="";
+	}
+	else
+	{
+		alert("设置失败，cookie的名不能为空！")
+	}
+}
+function getValue(n)
+{
+	if(Name.value=="")
+	{
+		alert("你没有输入要查找的cookie名");
+	}
+	else
+	{
+		var str=GetCookie(Name.value,n);			//取得要查询的cookie名并调用函数获取cookie值
+		if(str!="")
+		{
+			Value.value=str;
+		}
+		else
+		{
+			Value.value="该值为空！";
+		}
+	}
+	
+}
+</script>
+</head>
+<body>
+<label>
+cookie名：
+<input type="text" name="Name" />
+</label>
+<label> <br />
+<br />
+cookie值：
+<input type="text" name="Value" />
+</label>
+
+<p>
+  <label>
+  <input type="submit" name="Submit" value="设置cookie"  onclick="setValue()"/>
+  </label>
+  <label>
+  <input type="submit" name="Submit2" value="查询cookie" onclick="getValue(1)" />
+  </label>
+  <label>
+  <input type="submit" name="Submit3" value="非解码查询"  onclick="getValue(0)"/>
+  </label>
+</p>
+</body>
+</html>
+
+   

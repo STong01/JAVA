@@ -1,0 +1,20 @@
+<html> 
+<head> 
+<title>范例8-4</title> 
+<script language="JavaScript"> 
+function OnKeyUp(_e)			// 释放按键事件处理程序
+{ 
+	var e = _e?_e:window.event;	// 获取有效的事件对象
+	if( event.keyCode == 13 )	// 按下的是否是回车键
+	{
+		alert( "您输入的内容是："+Text1.value );	// 将文本框中的内容显示在消息框中
+	}
+}
+</script> 
+</head> 
+<body> 
+	<h1>事件处理示例</h1><br />
+	<!--通过文本框中的onkeyup属性绑定释放按键事件处理程序-->
+	<input id="Text1" type="text" onkeyup="OnKeyUp()" style="width: 423px; height: 178px" />
+</body> 
+</html> 

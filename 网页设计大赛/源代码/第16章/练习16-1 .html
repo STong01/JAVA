@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN " "http://www.w3.org/TR/REC-html140/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>验证电话号码</title>
+<script language="javascript">
+function checktel(tel)
+{
+   var str=tel;
+    //在JavaScript中，正则表达式只能使用"/"开头和结束，不能使用双引号
+   var Expression=/(\d{3}-)?\d{8}|(\d{4}-)(\d{7})/; 
+   var objExp=new RegExp(Expression);	//创建regexp对象
+   if(objExp.test(str)==true)		//检验是否匹配
+   {
+      return true;						//匹配
+   }
+   else
+   {
+      return false;			//不匹配
+   }
+}
+function Mycheck(myform)
+{
+   if(myform.familytel.value=="")	//检验输入是否为空
+   {
+      alert("请输入家庭电话!!");	//提示用户输入为空
+	  myform.familytel.focus();	//文本获得焦点
+	  return;
+   }
+  if(!checktel(myform.familytel.value))//判断检验是否成功
+   {
+     alert("您输入的家庭电话不正确!");	//提示用户验证不成功
+	 myform.familytel.focus();
+	 return false;
+   }
+   else
+   {
+   		alert("验证成功")
+		return true;
+   }
+}
+</script>
+</head>
+<body>
+<center>
+<p>验证电话号码合法性</p>
+<form onSubmit="return Mycheck(myform);" name="myform">    　
+  <input type="text" name="familytel">
+  <input type="submit" value="确定">
+</form>
+</center>
+</body>
+</html>
+

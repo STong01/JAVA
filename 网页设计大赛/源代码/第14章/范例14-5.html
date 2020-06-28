@@ -1,0 +1,45 @@
+<title>cookie的生存期</title>
+cookie名：
+<input type="text" name="Name">
+<br>
+cookie值：
+<input type="text" name="Value">
+<br>
+cookie时间：
+<select name="Time" size="1">
+  <option value="1">一天</option>
+  <option value="2">二天</option>
+  <option value="3">三天</option>
+  <option value="4">四天</option>
+  <option value="5">五天</option>
+  <option value="6">六天</option>
+  <option value="7">七天</option>
+  <option value="8">八天</option>
+</select>
+<script language="JavaScript" type="text/javascript">
+<!--
+function setCookie()
+{
+	n=Time.value;	
+	var name=Name.value;
+	var psd=Value.value;
+	if(name!="")
+	{
+		//获取当前时间
+		var date=new Date();
+		var expireDays=n*24*3600*1000;
+		//将date设置为n天以后的时间
+		date.setTime(date.getTime()+expireDays);
+		//将userId和userName两个cookie设置为10天后过期
+		document.cookie=name+"=;" +escape(psd)+"; expire="+date.toGMTString();
+		alert("设置成功!时间为："+expireDays+"秒（"+n+"天）");
+	}
+	else
+	{
+		alert("设置失败，cookie变量名不能为空");
+	}	
+}
+//-->
+</script>
+<input type="submit" name="Submit" value="设置cookie"  onClick="setCookie()">
+

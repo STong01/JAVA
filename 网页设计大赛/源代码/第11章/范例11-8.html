@@ -1,0 +1,29 @@
+<html>
+ <head>
+  <title>范例11-8</title>
+  <script language="javascript" >
+   <!--   
+    var frontURL = document.referrer; 						//上一个文档的URL
+	var host=location.hostname;								//当前主机域名
+	if(frontURL !="")
+	{
+		var frontHost=frontURL.substring(7,host.length+7)	//取得上一文档的域名
+		if(host==frontHost)									//判断两个文档的域名是否一致
+		{
+			alert("没有盗链！")								//域名一致提示用户访问合法
+		}
+		else
+		{
+			alert("您是非法链接，请通过本部访问")			//域名不一致提示用户访问非法
+		}
+	}
+	else
+	{
+		alert("您是直接打开该文档的，没有盗链")				//用户直接打开的文档
+	}
+   -->
+  </script>
+ </head>
+ <body>
+ </body>
+ </html>

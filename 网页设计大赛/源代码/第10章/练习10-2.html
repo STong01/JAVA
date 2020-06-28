@@ -1,0 +1,11 @@
+<SCRIPT language="JavaScript">					// 程序开始
+	var str = "21天学JavaScript，乐趣无穷！";		// 信息文本
+	var wrt = "";var index=0;				// 初始变量
+	function OnTime()					// 时钟事件
+	{
+		wrt = str.substring( 0, (++index)%str.length );	// 取子串
+		VP.innerHTML = wrt;				// 设置文本
+	}
+	setInterval( "OnTime()", 300 );				// 设置定时器
+</SCRIPT>
+<DIV id="VP"></DIV>						<!--信息层-->

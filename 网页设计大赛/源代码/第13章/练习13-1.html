@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>																<!--文档的头-->
+	<title>控制文本的对齐方式</title>									<!--文档的标题-->
+	<script language="javascript">
+		function align(n)												//自定义函数
+		{
+			switch(n)													//以n为变量的swith控制语句
+			{
+				case 1:form1.text.style.textAlign="left";				//左对齐
+						break;
+				case 2:form1.text.style.textAlign="center";				//居中对齐
+						break;
+				case 3:form1.text.style.textAlign="right";				//右对齐
+			}
+		}
+	</script>										
+	</head>																<!--文档主体-->
+	<form id="form1" name="form1" method="post" action="">				<!--表单-->
+	   <label onclick="align(1)">左对齐</label>&nbsp;<label onclick="align(2)">居中对齐</label>	<!--标签-->
+	   &nbsp;<label onclick="align(3)">右对齐</label><br />				<!--换行-->
+	   <textarea name="text" id="text" cols="50" rows="8"  style="ime-mode:inactive">青未了，柳回白眼；红欲透，杏开素面</textarea>	
+	   <!--一个多行文本框-->															
+	   </form>															<!--表单-->
+	</body>											
+</html>
+

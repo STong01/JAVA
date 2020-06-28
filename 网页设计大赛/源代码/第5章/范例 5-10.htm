@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例5-10</title>
+</head>
+<body>
+    <a href="http://www.cctv.com/default.shtml"><span style="color: #000000">中央电视台</span></a><br />
+    <a href="http://www.sina.com.cn"><span style="color: #000000">新 浪</span></a><br />
+    <a href="http://www.baidu.com/"><span style="color: #000000">百 度</span></a><br />
+    <a href="http://www.163.com/"><span style="color: #000000">网 易</span></a><br />
+    <a href="http://www.china.com"><span style="color: #000000">中 华 网</span></a><br />
+    <a href="http://www.google.cn"><span style="color: #000000">Google</span></a>
+    <script language="javascript">
+        var adr = "";
+        for( n in document.links )                          // 遍历超级链接集合
+        {
+            if( document.links.length == document.links[n] )// 忽略集合的第一个元素，因为表示集合的元素个数
+            {
+                continue;                                   // 直接下一轮循环
+            }
+                        // 提取链接名和网址，添加到字符串中
+            adr += document.links[n].childNodes[0].childNodes[0].toString() + "：\t"+ document.links[n] + "\n";
+        }
+        alert( adr );   // 对话框输出显示
+    </script>
+</body>
+</html>

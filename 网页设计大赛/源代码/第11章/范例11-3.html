@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>范例11-3</title>						<!--文档的头各标题-->
+<script language="javascript">				//JavaScript程序
+function img()
+{
+
+	for(i=0;i<document.forms[1].length-1;i++)
+	{
+		document.Myform.showMsg.value +=document.forms[1].elements[i].value+"\n"; //第i-1个<form>标签 
+	}
+	alert(Myform.showMsg.value);			//用对话框的形式显示信息
+}
+</script>									<!-- JavaScript结束标签-->
+</head>										<!--JavaScript头的>结束 -->
+<body>   
+<form name="Myform">						<!--表单-->
+  <p>显示个人信息</p>						<!--带文本的段落-->
+  <p>										<!--段落-->
+    <textarea name="showMsg" cols="40" rows="8" ></textarea>
+  </p>										<!--段落结束-->
+ </form>									<!--表单结束-->
+<form name="form1" method="post" action="">	<!--创建一个表单-->
+  个人信息<br> 
+    姓名：<input type="text" name="Name"  > <!--姓名文本模框-->
+  <p>
+    性别：<input type="text" name="sex"> 	<!--性别文本模框-->     
+  </p>
+  <p>
+  学号：<input type="text" name="num"> 		<!--学号文本模框-->   
+  <label>
+  <input type="submit" name="Submit" value="提交" onClick="img()"><!--提交表单调用img函数--> 
+  </label>
+  </p> 
+</form>
+</body>
+</html>

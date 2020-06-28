@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>获取文本框的属性</title>
+	<script language="javascript">
+		function show()
+		{
+			var str1=form1.elements[0].value;		//文本的值	
+			var str2=form1.elements[0].name;		//文本的名称	
+			var str3=form1.elements[0].type;		//文本类型
+			var str4=form1.elements[0].size;		//字符的宽度
+			var str5=form1.elements[0].maxlength;	//最多字符数	
+			alert("文本值："+str1+"\n\r"+"文本名："+str2+"\n\r"+"文本类型："+str3+"\n\r字符宽度："+
+			str4+"\n\r最多字符数："+str5);
+		}
+	</script>
+</head>
+<body>
+	<form id="form1" name="form1" method="post" action="">
+  		姓名： 
+	    <input name="boxName" type="text" value="boxValue" size="50" maxlength="30"/>
+	</form>
+	<div onclick="show()" align="center">查看信息</div>
+</body>
+</html>

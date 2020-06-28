@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<TITLE>对象 MsgBoardCtl 的 ATL 7.0 测试页</TITLE>
+</HEAD>
+<BODY>
+
+<p align="center">
+<OBJECT ID="MsgBoardCtl" CLASSID="CLSID:697BE8C3-BD33-4F37-AB7D-9C65B0F9188D" width="400" height="100" VIEWASTEXT></OBJECT>
+</p>
+<script language="javascript">
+	var messageList = new Array();
+	messageList.push( "您知道吗，这是使用ActiveX控件发布的通知！" );
+	messageList.push( "您知道吗，使用ActiveX控件可以实现十分强大的功能！" );
+	messageList.push( "您知道吗，使用ATL制作ActiveX控件非常方便！" );
+	var index = 0;
+	function onClickIn( x, y )
+	{
+		index++;
+		MsgBoardCtl.msgText = messageList[index%3];
+	}
+</script>
+<script language="javascript" for="MsgBoardCtl" event="ClickIn(x,y)">
+	onClickIn( x, y )
+</script>
+</BODY>
+</HTML>

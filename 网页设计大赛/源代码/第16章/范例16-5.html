@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script language="javascript">
+	var str1 = "I like red and black";	// 给字符串赋初值
+	var str2 = "she likes black"; 		// 给字符串赋初值
+	var result = /(red|black)/;			//候选正则表达式
+	reStr=result.test(str1);			//用test方法检查字符串是否存在
+	alert(result.test(str2));			//返回的值为bool型，即true或flase,这里返回的是true
+	alert(reStr)						//返回true
+</script>
+</body>
+</html>

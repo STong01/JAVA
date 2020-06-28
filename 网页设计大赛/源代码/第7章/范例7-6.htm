@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例7-6</title>
+</head>
+<body>
+<h1>售票窗口模拟</h1>
+<script language="javascript">
+    var queue = new Array();                                                // 购票队列
+    function client(name)                                                   // 顾客对象
+    {
+        this.name = name;                                                   // 顾客名字
+        this.ticket = NaN;                                                  // 票号
+    }
+    queue.push( new client("Lily"), new client("Peter"), 
+                new client("Vicky"), new client("Tom"), 
+                new client("Jackson") );                                    // 将顾客排队
+    tickets = 4;                                                            // 库存票数
+    for( ;((queue.length!=0)&&(tickets!=0)) ; )                             // 一直发售直到队伍里没有人或票已经售完
+    {
+        var current = queue.shift();                                        // 队首已经买到票的人离开队伍
+        current.ticket = tickets;
+        document.write("<br>已售：" + current.name + "，流水号" + tickets );// 输出已买到票的顾客信息
+        tickets --;                                                         // 卖出一张，库存减一
+    }
+    
+    alert( "销售停止，目前队里有" + queue.length + "人，和" + tickets+"张票！" );   // 俏售停止通知
+</script>
+</body>
+</html>

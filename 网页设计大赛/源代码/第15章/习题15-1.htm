@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>练习15-1</title>
+    <script language="javascript">
+    function CreateLinks( url )
+    {
+		var xmlDom = new ActiveXObject("Microsoft.XMLDOM");						// 创建XML DOM对象
+		if( xmlDom == null )										// 创建失败时
+		{
+			alert( "创建XMLDOM失败！" );								// 提示用户并返回
+			return;
+		}
+		xmlDom.async = false;										// xml文件加载完毕后才开始分析
+		xmlDom.load(url);										// 加载xml
+		links = xmlDom.documentElement;									// 获得文档根节点
+		for( n=0; n!=links.childNodes.length; n++ )							// 逐一分析每一个子节点
+		{
+			a = document.createElement("<a>");							// 创建一个“<a>”节点
+			a.setAttribute( "href",links.childNodes[n].getAttribute("href") );			// 使用xml文件中的link节点的href属性作为链接文字
+			l = document.createTextNode("★");							// 创建一个文本节点作为链接的开头符号
+			t = document.createTextNode( links.childNodes[n].getAttribute("title") );		// 使用xml文件中的link节点的title属性作为链接文字
+			r = document.createElement("<br>")							// 创建一个换行标签对象
+			a.appendChild( l );									// 将以上各新建的节点添加为超级链接节点的子节点
+			a.appendChild( t );
+			a.appendChild( r );
+			document.getElementById("DocBody").appendChild( a );					// 将超级链接节点添加为当前HTML文档BODY节点的子节点
+		} 
+    }
+    </script>
+</head>
+<body id="DocBody" onload="CreateLinks( 'links.xml' )" >
+</body>
+</html>

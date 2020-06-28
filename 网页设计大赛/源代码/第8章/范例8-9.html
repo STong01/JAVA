@@ -1,0 +1,40 @@
+<html><head><title>范例8-9</title>
+<script language="javascript"> 
+function SetNumber(n)
+{ 
+	var NumArr = new Array(); 
+	for(var i=0;i<=n;i++)
+	{
+		NumArr[i]=i;						//给数组赋值
+	}
+	return NumArr;							//返回数组的值
+} 
+function GetSum()
+{ 
+	var n=prompt("请输入您的值","1");				//取得输入值
+	if(n<-1)							//判断输入值是否符合要求
+	{
+		alert("您输入的值不合法，请重新输入!");
+		GetSum();
+ 	}
+	if(n!=null)
+	{
+		var NumArr = new Array(); 
+		var sum=0;
+		NumArr = SetNumber(n);					//取得函数返回值
+		for(num in NumArr)
+		{
+			sum=sum+NumArr[num];				//求和
+		}
+		alert("从0到"+n+"的和为:"+sum);
+	}
+	else
+	{
+		return;
+	}
+} 
+</script>
+</head>
+<body>
+<input name="" type="Submit"  value="求和" onClick="GetSum()" />
+</body></html>

@@ -1,0 +1,27 @@
+所指的程序{
+    font-family:加字体的代码(字体的修改)；
+    font-size:加字体的大小（加px指字体的单位）；
+    font-weight：加字体的粗细（normal/bold/bolder/lighter);
+    font-style:加字体的倾斜程度（normal);
+    font-variant:修饰英文体大小写（small-caps/normal);
+}
+所指程序{
+    color:加颜色（改变文本的颜色）；
+    text-align:center(居中)（文本的对齐）；
+}
+图片程序{
+    vertical-align:super(图片相对于文字上端对齐)middle，text-top(置顶部)；
+}
+文本修饰：所指程序{
+    text-decoration:none(取消一些默认设置),overline(上划线)；
+    text-indent:2em(文本首行缩进,em为字符的单位，加正负是指向左或右缩进)；
+}
+文本的流动方向：所指程序{
+    direction:ltr(默认方向)，rtl(相反方向)；
+}
+盒子代码：div{
+    width:500px;
+    height:500px;
+    background-color:red;
+    margin：0 auto:
+}

@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>范例4-17</title>
+</head>
+<body style="font-size: 12px">
+<script language="javascript">
+<!--
+    var actTotal = 109.7;                                       // 账单总额
+    var payTotal = 123.45;                                      // 当前应该付的款额
+    document.write( "<li>您账上余额：" + actTotal + "元<br>" ); // 输出账面信息
+    document.write( "<li>您需要支付：" + payTotal + "元<br>" );
+    document.write( "<input id=\"BtnPay\" type=\"button\" value=\"确认支付\" onclick="
+                    + "\"return BtnPay_onclick()\" style=\"width: 150px\" /><br>" ); // 生成“确认支付”按钮
+    if( payTotal > actTotal )                                   // 如果余额不足，支付按钮设置为失效
+    {
+        document.write(  "信息：<font color=red>您的余额不足，无法完成支付！</font>" );
+        BtnPay.disabled = true;
+    }
+    else                                                        // 余额够用于支付，则启用按钮
+    {
+        BtnPay.disabled = false;
+    }
+    function BtnPay_onclick()                                   // 按钮单击事件处理函数，主要处理表达发送输出结算信息
+    {
+        // 在此添加发送数据到服务器的操作代码……
+        document.write( "<li><font color=red>已经完成支付</font>" );
+        document.write( "您账上余额：" + (actTotal-payTotal) + "元<br>" );
+    }
+-->
+</script>
+</body>
+</html>

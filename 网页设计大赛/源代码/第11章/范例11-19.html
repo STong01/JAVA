@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>范例11-19</title>
+</head>
+<body>
+<div align="center">
+  <script language="javascript">
+// 初始化图片地址
+var pics=new Array("pic/pic1.jpg","pic/pic2.jpg","pic/pic3.jpg","pic/pic4.jpg","pic/pic5.jpg");
+function showPic()
+{
+	// 随机取得要显示的图片的地址
+	var n=Math.abs(5-Math.floor(Math.random()*10));
+	if(n==5)n=4;
+	pic.src=pics[n];
+}
+//每秒钟都随机换一幅图
+setInterval("showPic()",1000);
+</script>
+  <img src="flower.jpg" name="pic" height="300"/>
+</div>
+</body>
+</html>

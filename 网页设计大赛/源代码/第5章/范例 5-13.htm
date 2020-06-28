@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例5-13</title>
+</head>
+<body>
+<script language="javascript">
+try
+{
+    var total = 100;
+    var parts = 0;
+    if( parts == 0 )                    // 如果除数为0则抛出异常
+    {
+        throw "Error:parts is zero";
+    }
+    alert( "每人"+total/parts+"份");    //此处将捕获try块中抛出的异常
+}
+catch( e )
+{
+    alert( e );
+}
+</script>
+</body>
+</html>

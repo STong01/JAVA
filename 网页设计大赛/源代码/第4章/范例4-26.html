@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>范例4-26</title>
+</head>
+<body>
+<script language="javascript">
+<!--
+    function showStudentInfo()
+    {
+        // 输出this指针指向的对象的name、age成员
+        document.write( "<li>" + this.name + " " + this.age + "<br>" );
+    }
+    function Student( _name, _age )         // 定义Student类的构造函数
+    {
+        this.name = _name;
+        this.age = _age;
+    }
+    var stu1 = new Student( "Tom", 20 );    // 创建两个学生类实例
+    var stu2 = new Student( "Lily", 21 );
+    showStudentInfo.call( stu1 );           // 分别以stu1、stu2作为上下文调用showStudentInfo函数
+    showStudentInfo.call( stu2 );
+--> 
+</script>
+</body>
+</html>

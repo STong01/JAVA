@@ -1,0 +1,35 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>范例11-19</title>
+<script language="javascript">
+var n=2;
+var r=1;
+var control=true;
+function warp()
+{
+	if(control==true)n++;
+	else n--;	
+	if(n==300)control=false; //控制图片的走向（增大/缩小）
+	if(n==1)control=true;
+	if(control==true)
+	{
+		pic.width=pic.width+1  //图片的宽加1个象素
+		pic.height=pic.width+1//图片的高加1个象素
+	}
+	else
+	{
+		pic.width=pic.width-1  //图片的减少1个象素
+		pic.height=pic.width-1//图片的高减少1个象素
+	}
+	
+	
+}
+setInterval("warp()",30)
+</script>
+</head>
+<body>
+<img src="flower1.jpg" name="pic"/>
+</body>
+</html>

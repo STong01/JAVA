@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例6-2</title>
+</head>
+<body>
+<script language="javascript">
+    var circularityArea = new Function( "r", "return r*r*Math.PI" );    // 创建一个函数对象
+    var rCircle = 2;                        // 给定圆的半径
+    var area = circularityArea(rCircle);    // 使用求圆面积的函数求面积
+    alert( "半径为2的圆面积为：" + area );  // 输出结果
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>JavaScript调试</title>
+</head>
+<body>
+<script language="javascript">
+	var balance = 200.0;	        // 当余额
+	var willPay = 20.0;		        // 当前该付金额
+	function pay( _balance, _pay )	// 付账动作
+	{
+		return _balance - _pay;		// 从余额中减去该付的数额
+	}
+	function ShowBalance()			
+	{
+		debugger;					// 设置断点，激活调试
+		var blnc = pay( balance, willPay );	// 付账
+		alert( "当前余额：" + blnc );		// 输出余额
+	}
+	ShowBalance();							// 显示余额
+</script>
+</body>
+</html>

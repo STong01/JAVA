@@ -1,0 +1,13 @@
+<script type="text/javascript">
+function CreateNewContent()															// 创建节点
+{
+		var msg = "提示：可以通过修改文档节点来动态改变文档的内容";
+		var newPNode = document.createElement("p");					// 创建段落节点
+		var newTxtNode = document.createTextNode(msg);			// 创建文本节点
+		newPNode.appendChild(newTxtNode);										// 添加子节点
+		document.body.appendChild(newPNode);								// 添加子节点
+}
+</script>
+<body onload="CreateNewContent()"><b>修改文档节点</b></body>
+
+

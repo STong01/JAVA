@@ -1,0 +1,19 @@
+<div id="content">
+  	JavaScript是世界上使用人数最多的程序语言之一，几乎每一台普通用户的
+	电脑上都存在JavaScript程序语言的影子。然而绝大多数用户却不知道它的
+	起源，并如何发展至今。JavaScript程序设计语言在Web领域的应用越来越火，
+	未来它将会怎样?<br/>
+</div>
+<br/>
+<input type="text" id="keyword"/>
+<button onClick="match()">search</button>
+<script type="text/JavaScript">
+<!--
+var str = content.innerHTML;
+function match()
+{
+	if(keyword.value == '') return false;			//如果没有输入关键词，不作处理
+	var regexp = new RegExp("("+keyword.value+")", "g");	//否则根据关键词构造正则表达式对象
+	content.innerHTML = str.replace(regexp,"<font color='red'>$1</font>");//根据动态构造的正则表达式对象进行全文检索和匹配
+}
+</script>

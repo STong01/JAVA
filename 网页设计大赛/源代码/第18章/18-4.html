@@ -1,0 +1,49 @@
+<script language="javascript">
+function CreateHttpRQ()
+{
+		if( window.navigator.appName == "Microsoft Internet Explorer" )	// 如果是IE
+		{
+			try																														// 捕捉异常
+			{
+				return new ActiveXObject( "Microsoft.XMLHTTP" );						// 创建XMLHttpRequest
+			}
+			catch(E)																											// 处理异常
+			{
+				return null;																								// 返回空值
+			}
+		}
+		else																														// 其它浏览器
+		{
+			return new XMLHttpRequest();																	// 返回创建的对象
+		}
+}
+var xmlHtpRq = CreateHttpRQ();	
+function OnStatusChange()																						// 状态事件处理程序
+{
+	if (xmlHtpRq.readyState == 4) 																		// 正常响应状态
+	{
+		if (xmlHtpRq.status == 200)																			// 正确的接收响应数据
+		{
+			document.getElementById('VIEPORT').innerHTML = xmlHtpRq.responseText;	// 设置提示信息
+		} 
+		else																														// 状态不正常
+		{
+			document.getElementById('VIEPORT').innerHTML = xmlHtpRq.status;	// 输出状态码
+		}
+	}
+}
+function OnTitleClick( obj )
+{
+	if( xmlHtpRq != null )
+	{
+		url = "http://localhost/server.php?file=" + obj.link;							// 构建URL
+		xmlHtpRq.open('GET', url, true);																	// 打开连接
+		xmlHtpRq.onreadystatechange = OnStatusChange;											// 注册状态事件侦听器
+		xmlHtpRq.send(null);	
+	}
+}																																			// 发送请求
+</script>
+<label onclick="OnTitleClick(this)" link="chapter/1.txt"><li><b>改进的iframe局部刷新</b></label ><br>						<!--文章链接-->
+<label onclick="OnTitleClick(this)" link="chapter/2.txt"><li><b>服务器PHP程序</b></label ><br>			<!--文章链接-->
+<label onclick="OnTitleClick(this)" link="chapter/3.txt"><li><b>服务器脚本语言</b></label ><br>		<!--文章链接-->
+<div style="width: 884px; height: 363px" id="VIEPORT">当前没有文章</div>

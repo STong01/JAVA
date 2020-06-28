@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>范例11-11</title>
+<script language="javascript">   
+function openwin()   
+{   
+	// 打开一个txt类型的文档
+	OpenWindow=window.open("test.txt", "newwin", "height=250, width=250,toolbar=no"); 
+	OpenWindow.document.title="一个非HTML窗口" ;// 给窗口命名
+}	
+</script>   
+</head>   
+<body> 
+<!--  调用openwin()函数-->  
+<a href="#" onClick="openwin()">打开一个非HTML窗口</a>   
+<input type="button" onClick="openwin()" value="打开一个非HTML窗口">   
+</body>   
+</html>   
+
+

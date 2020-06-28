@@ -1,0 +1,16 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script language="javascript">
+function mymethod(str)			// 事件处理程序
+{
+	alert("您输入的是："+str)	// 显示信息
+}
+</script>
+</head>
+<body>
+<form action="" method="get">
+<!-- 调用mymethod()函数用this.value取得当前对象的值做参数 -->
+<input type="text" name="text" onChange="mymethod(this.value)"/>
+<input type="submit" name="button" value="提交" />
+</form>
+</body>

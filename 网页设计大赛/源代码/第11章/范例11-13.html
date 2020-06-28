@@ -1,0 +1,40 @@
+
+<html>
+<head>
+<title>范例11-13</title>
+<script language="javascript"> 
+
+function Value()
+{
+	var str=new Array(3);
+	str[0]= document.all.cnlTest1.value; 				//用第一种方法获得文本框中输入的内容
+	str[1]= document.all["cnlTest2"].value;				//用第二种方法获得文本框中输入的内容
+	str[2]=document.all.tags('form')[0].cnlTest3.value;//用第三种方法获得文本框中输入的内容
+	with(document)										//访问document对象的属性值
+	{
+		write("姓名："+str[0]+"<br>"); 
+		writeln("住址："+str[1]+"<br>");
+		writeln("工号："+str[2]+"<br>");
+	} 
+}
+</script>
+</head> 
+<body>
+
+<form action="" method="get" name="form1">
+  <p>&nbsp;  </p>
+  <p>姓名：
+    <input id="cnlTest1" name="cnlTest1" value="">
+  </p>
+  <p> 
+   住址： <input id="cnlTest2" name="cnlTest2" value="">
+  </p>
+  <p> 
+   工号： <input id="cnlTest3" name="cnlTest3" value="">
+  </p>
+  <p>
+    <input name="" type="Submit" onClick="Value()" value="显示信息">
+  </p>
+</form>
+</body>
+</html>

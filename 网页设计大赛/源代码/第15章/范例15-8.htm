@@ -1,0 +1,24 @@
+<body><script type="text/javascript">
+function GetAll()													// 获取所有节点
+{
+	var walker = null;											// 引用迭代器
+	var list = "";													// 列表文本
+	var filter = new Object;								// 过滤器对象
+	filter.acceptNode = function ()					// 设置接受访问的条件
+	{
+		return NodeFilter.FILTER_ACCEPT;			// 接受所有
+	}
+	walker = document.createTreeWalker(document.documentElement,
+													NodeFilter.SHOW_ALL, filter, false);	// 创建迭代器
+	var cur = walker.nextNode();						// 批向下一个节点
+	while(cur)															// 遍历
+	{
+		list += cur.tagName + "\n";						// 获取标签名
+		cur = walker.nextNode();							// 指向下一个节点
+	}
+	alert( list );													// 输出列表
+}
+</script><div id="div1"><ul><li>电影</li>	<!-- 创建内容节点 -->
+<li>购物</li><li>游戏</li></ul></div>			<!-- 容节点       -->
+<input type="button" value="开始遍历" onClick="GetAll()" />
+</body>

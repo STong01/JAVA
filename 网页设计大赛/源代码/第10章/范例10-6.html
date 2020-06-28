@@ -1,0 +1,17 @@
+<script language="javascript">							// 程序开始
+var count = navigator.mimeTypes.countgth;					// 取得MIME数量
+with (document) 								// 改变上下文对象
+{
+	write ("当前浏览器共支持" + count + "种MIME类型：");
+	write ("<TABLE BORDER>")                               			// 输出表格    
+	write ("<CAPTION>MIME type 清单</CAPTION>")           			// 输出标题
+	write ("<TR><TH> <TH>名称<TH>描述<TH>扩展名<TH>附注")
+	for (var i=0; i<count; i++)                                      	// 遍历MIME数组
+	{
+		write("<TR><TD>" + i + "<TD>" + navigator.mimeTypes[i].type +	// 输出各项的值
+		"<TD>" + navigator.mimeTypes[i].description +"<TD>" +
+		navigator.mimeTypes[i].suffixes + "<TD>" + 
+		navigator.mimeTypes[i].enabledPlugin.name);
+	}
+}
+</script>   									<!-- 程序结束 -->

@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例16-1</title>
+</head>
+<body>
+<script language="javascript">
+	var filter = /一枪爆头/g;		// 将受限制的词语组成正则表达式
+	var said = "他被人一枪爆头了";	// 将接受检查的语句
+	if( filter.test( said ) )		// 如果被检查语句中存在受限词汇
+	{
+		alert( "该语句中有限制级词语，系统已经过滤！" );	// 显示警告
+	}
+	else							// 否则
+	{
+		alert( said );				// 输出原话
+	}
+</script>
+</body>
+</html>

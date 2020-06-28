@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>验证表单</title>
+<script language="javascript">
+function check()
+{
+	if(form1.name.value==""||form1.age.value==""||form1.mail.value=="")//验证用户输入是否为空。
+	{
+		alert("您没有完善您的资料");
+	}
+	else
+	{
+		var str=form1.mail.value  										//取得用户输入的email信息
+		var n=str.indexOf("@",1);									   //查找@
+		if((n==-1)||(n==(str.length-1)))							   //验证表单中的emalil是否合法
+		{
+			alert("您的E-mail地址不合法，请重新输入");
+			return false;
+		}
+		alert("验证成功！！！");
+		 
+	}
+}
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+  姓名：
+  <label>
+  <input type="text" name="name" />
+  </label>
+  <p>年龄：
+    <label>
+    <input type="text" name="age" />
+    </label>
+  </p>
+  <p>email:
+    <label>
+    <input type="text" name="mail" />
+    </label>
+    <label>
+    <input type="submit" name="Submit" value="提交"  onclick="check()"/>
+    </label>
+    <label>
+    <input type="reset" name="Submit2" value="重置" />
+    </label>
+  </p>
+</form>
+</body>
+</html>

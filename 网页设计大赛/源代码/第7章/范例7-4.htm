@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例7-4</title>
+</head>
+<body>
+<h1>push方法的使用</h1>
+<script language="javascript">
+var List = new Array();                     // 创建一个空数组作为名单
+for( ; ; )
+{
+    var name = prompt("请输入名字","名字"); // 要求用户输入名字
+    if( name==null )                            // 如果用户取消则退出循环
+    {
+        break;
+    }
+    List.push( name );                      // 将输入的数据作为数组元素添加到数组
+}
+var comList = List.join( " " );             // 使用空格将各元素格开，作为字串符输出
+document.write( comList );
+</script>
+</body>
+</html>

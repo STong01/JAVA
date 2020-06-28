@@ -1,0 +1,62 @@
+<script language="javascript" type="text/javascript">
+var xmlHttp;
+function CreateHttpRQ()																						// 创建XMLHttpRequest对象的函数
+{
+	if( window.navigator.appName == "Microsoft Internet Explorer" )	// 如果是IE
+	{
+		try																														// 捕捉异常
+		{
+			return new ActiveXObject( "Microsoft.XMLHTTP" );						// 创建XMLHttpRequest
+		}
+		catch(E)																											// 处理异常
+		{
+			return null;																								// 返回空值
+		}
+	}
+	else																														// 其它浏览器
+	{
+		return new XMLHttpRequest();																	// 返回创建的对象
+	}
+}			
+function httpStateChange()																				// 处理异步调用状态事件
+{
+	if(xmlHttp.readyState==4)																				// 若成功调用
+	{
+		if (xmlHttp.status==200 || xmlHttp.status==0)
+		{
+			var str=xmlHttp.responseText.split("*");										// 以*为换行标志
+			var strs="";var i;
+			for(i in str)
+			{
+				strs+=str[i]+"\r\n";																			// 处理聊天消息
+			}
+			text2.value=strs;																						// 显示信息
+		}
+		else
+			alert();																										// 输出错误提示
+	}
+}			
+function Update()																									// 更新聊天消息
+{
+	xmlHttp = CreateHttpRQ();																				// 创建XMLHttpRequest对象
+	if (xmlHttp!=null)
+	{					
+		var str="data.php?text="+text.value;													// 创建HTTP请求
+		xmlHttp.open("post",str,true);
+		xmlHttp.onreadystatechange = httpStateChange;									// 设置回调函数
+		xmlHttp.send(null);																						// 发送请求
+	}
+}
+function check()																									// 处理文本事件
+{
+	if(text.value!="")																							// 如果发送的消息不为空
+		Update();																											// 更新
+	else
+		alert("发送的内容不能为空");																	// 提示
+	text.value="";
+}
+</script>
+<label><div align="center"><textarea name="text2" cols="50" rows="10">		<!--聊天窗口-->
+</textarea></div></label><label><div align="center"><br>
+<textarea name="text" cols="50" rows="5"></textarea><br>									<!--聊天窗口-->
+<input name="button" type="button" onClick="check()" value="发送"></div><!--发送按钮-->

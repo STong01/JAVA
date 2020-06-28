@@ -1,0 +1,24 @@
+<title>综合练习3-1</title>
+<script language="javascript">
+<!--
+	// 定义变量引用一个数组对象
+	var oMyArray = new Array( 13, 55, 37, 33, 45, 9, 60, 21, 10 );
+	// 输出排序前的数组
+	document.write( "排序前：" + oMyArray );
+	// 开始排序
+	for ( index in oMyArray )
+	{
+	    for ( i in oMyArray )
+	    {
+	        if( oMyArray[index]<oMyArray[i] )
+	        {
+	            nTemp = oMyArray[index];
+	            oMyArray[index] = oMyArray[i];
+	            oMyArray[i] = nTemp;
+	        }
+	    } 
+	}
+	// 输出排序后的数组
+	document.write( "<br>排序后：" + oMyArray );
+-->
+</script>

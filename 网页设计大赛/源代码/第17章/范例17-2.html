@@ -1,0 +1,23 @@
+<h1>自动聚合消息</h1>
+<div id="viewport">当前没有新闻</div>
+<script language="javascript">
+	var xmlDOM = new ActiveXObject( "Microsoft.XMLDOM" );								// 创建XMLDOM对象
+	var newsArray = new Array();																				// 创建消息数组
+	var index = 0;																											// 当前消息索引
+	if( xmlDOM != null )																								// 如果XMLDOM创建成功
+	{
+		xmlDOM.async = false;																							// 关闭异步模式
+		xmlDOM.load( "news.xml" );																				// 加载新闻数据
+		xmlDOM = xmlDOM.documentElement;																	// 获取文档主节点
+		for( n=0; n<xmlDOM.childNodes.length; n++ )												// 遍历文档
+		{
+				newsArray.push( xmlDOM.childNodes[n].firstChild.nodeValue );	// 提取新闻
+		}
+	}
+	setInterval( "ToggleNews()", 1000 );																// 设定定时器
+	function ToggleNews( )																							// 定时器函数
+	{
+		viewport.innerHTML = "<li>"+newsArray[index%(newsArray.length)];	// 设置DIV文本
+		index++;																													// 索引号递增
+	}
+</script>

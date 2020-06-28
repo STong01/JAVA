@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN""http://www.w3.org/TR/REC-html140/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<title>范例16-3</title>
+		<script language="JavaScript">
+		<!--		
+		function check()		
+		{		
+		  var use=username.value;		
+		  var regx=/[a-z0-9]\w\d/g;
+		  if(!regx.test(use))	//不合法	
+		  {    
+			alert("\n用户名检测 : \n\n结果 : 用户名不合法! \n");
+			use.focus();		//获得焦点
+			username.value=""	
+		  }		
+		  else  
+		  {
+			alert("\n用户名检测 : \n\n结果 : 用户名合法! \n");		
+		  	username.value=""
+		 }	
+		 }
+		-->		
+		</script>
+	</head>
+<body>
+	<center><p>
+  	用户名合法性检测程序
+	</p>
+	<p>
+	规则:数字或英文字符串+数字
+	</p>
+	  <input type="text" name="username" value="">
+	  <input type="submit" value="合法性检测" onClick="check()">
+	</center>
+</body>
+</html>
+

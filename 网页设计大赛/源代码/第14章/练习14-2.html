@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>记住赂账号和密码</title>
+<script language="javascript">
+function writeCookie(name,value,day)
+{
+	var expire="";
+	expire=new Date((new Date()).getTime()+day*86400000);//设置存活期
+	//toGMTString() 方法可根据格林威治时间 (GMT) 把 Date 对象转换为字符串，并返回结果
+	expire=";expires="+expire.toGMTString();
+	document.cookie=name+"="+escape(value)+";"+expire;// 设置cookie变量	
+}
+function readCookie(name)
+{
+	var allcookies = document.cookie;
+			var value="";
+			var searchs=name+"=";
+			if(allcookies.length>0)						//查看cookie是否为空
+			{
+				var offset=allcookies.indexOf(searchs);//找到要查找的变量名
+				if(offset!=-1)							//判断所查找的变量名是否存在
+				{
+					offset+=searchs.length;
+					var end=allcookies.indexOf(";",offset);	//找到变量值的结束位置
+					if(end==-1)							//防止没加“；”号的情况发生
+					{
+						end=allcookies.length;
+					}
+					value=unescape(allcookies.substring(offset,end));//取得变量的值
+				}
+			}
+			return value;			
+}
+function writeMember()
+{
+	if(form1.member.checked)
+	{
+		var usrname=form1.usr.value;
+		var psd=form1.psd.value;
+		writeCookie("usr",usrname,30);
+		writeCookie("psd",psd,30);
+		writeCookie("check","yes",30);
+	}
+	else
+	{
+		writeCookie("usr","",30);
+		writeCookie("psd","",30);
+		writeCookie("check","",30);
+	}
+}
+function readMember()
+{
+	var member="";
+	member=readCookie("check");
+	if(member!="")
+	{
+		if(readCookie("usr")=="")
+		{
+			form1.usr.value="";
+			form1.psd.value="";
+		}
+		else
+		{
+			form1.usr.value=readCookie("usr");
+			form1.psd.value=readCookie("psd");
+		}
+		form1.member.checked=true;
+	}
+}
+</script>
+</head>
+<body onload="readMember()">
+<form id="form1" name="form1" method="post" action="" onsubmit="writeMember()">
+  <label>账户：
+  <input type="text" name="usr" />
+  </label>
+  <p>
+    <label>密码：
+    <input type="password" name="psd" />
+    </label>
+  </p>
+  <p>
+    <label>
+    <input type="checkbox" name="member" />
+    记住密码</label>
+    <label>
+    <input type="submit" name="Submit" value="提交" />
+    </label>
+  </p>
+</form>
+</body>
+</html>

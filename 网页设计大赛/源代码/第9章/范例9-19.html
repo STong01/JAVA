@@ -1,0 +1,19 @@
+<script language="javascript">
+	var tm = 0;																	// 计时器
+	var count = 0;															// 计数器
+	function ReloadPage()												// 定时器函数
+	{
+		if( window.confirm("是否要重新加载？") )	// 询问用户是否要重新加载
+		{
+			window.location.reload();								// 重新加载
+		}
+		else
+		{
+			if( ++count==3 )												// 3次尝试后将自动移除计时器
+			{
+				clearInterval( tm );									// 清除计时器	
+			}	
+		}
+	}
+	tm = setInterval("ReloadPage()", 1000);			// 设定定时器
+</script>

@@ -1,0 +1,18 @@
+﻿<html>
+<head>
+<title>范例8-8</title>
+</head>
+<body>
+<form name="myform" method="post" action="">
+   	<input type="submit" name="mybutton" value="提交" onclick="return clickHandler()">
+</form>
+<script language="javascript">
+function clickHandler()			// “提交”按钮单击事件处理程序
+{
+	alert("即将提交表单！");	// 提示信息
+	return true;			// 返回真表示可以发送表单
+}
+myform.mybutton.onclick();		// 主动激发“onclick”事件
+</script>
+</body>
+</html>

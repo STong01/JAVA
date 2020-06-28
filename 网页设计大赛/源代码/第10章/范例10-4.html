@@ -1,0 +1,23 @@
+<script language="javaScript">	
+	<!--
+	var x=10;																										// 窗口的初始高宽为10
+	var y=window.screen.availHeight;														// 最终高为显示器实际可用高
+	var dx=5;																										// 定义每次增量dx；
+	var newFrm=window.open("","newForm","menubar=0,toolbar=0");	// 打开新窗口
+	newFrm.resizeTo(x,y);												// 将窗口缩放到指定大小；
+	var intervalID=window.setInterval("active()",100);					// 设置定时调用一次active	
+	function active()
+	{
+		if(newFrm.closed)													// 如果newFrm关闭
+		{
+			clearInterval(intervalID);							// 移除定时器
+			return;																	// 返回
+		}
+		if(x<screen.availWidth)
+			x+=dx;																	//当x小于屏幕可用工作区宽度时
+		else
+			clearInterval(intervalID);							// 移除定时器
+		newFrm.resizeTo(x,y);											// 窗口改变到指定大小
+	}
+</script>
+<input type="button"  value="stop" onClick="clearInterval(intervalID);newFrm.close();">

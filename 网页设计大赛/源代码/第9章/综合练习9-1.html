@@ -1,0 +1,43 @@
+<script language="javascript">
+var adrList = new Array();		// 创建一个用于存储地址的数组  
+function addNewAddressAndStart( )	// 定义函数，实现添加地址和设定间隔时间
+{
+    for( ;; )				// 循环要求用户输入网址
+    {
+        var adr = prompt( "请添加一个新地址，此步骤将连续添加多个地址，要停止添加请按“取消”：", "" );
+        if( adr == null )		// 用户取消输入时跳出当前循环
+            break;    
+        adrList.push( adr );		// 将用户输入的网址存储到数组的尾部
+    }
+    var interal = prompt( "请设定打开新窗口的时间间隔，以毫秒为单位：", "1000" );	// 要求用户输入时间间隔
+    if ( interal == null )		// 如果用户忽略上一步则自动设置为5秒
+        interal = 5000;
+    setInterval( "start()", interal );	// 使用setInterval设置间隔(interal/1000)秒就运行一次start函数
+    refreshList();			// 刷新地址列表
+}
+var curAD = 0;				// 使用就是curAD以指示当前要打开的页面
+var oldWin = null;			// 使用变量oldWin引用当前打开的窗口
+function start( )			// 定义函数打开新窗口
+{
+    if( oldWin != null )		// 定义函数打开新窗口
+        oldWin.close();
+    if( adrList.length == 0 )		// 如果地址列表为空，则函数什么也不做，直接返回
+    {
+        Addresslist.value = "地址列表为空";return;
+    }
+    oldWin = window.open( adrList[curAD], "", "width=400,height=300" );	// 打开新窗口并引用至oldWin变量
+    curAD ++ ;				// 将指示器curAD递增
+    if( curAD == adrList.length )	// 如果已经超过数组的末端则置0，指向数组首元素
+        curAD = 0;
+}
+function refreshList()	// 刷新地址列表
+{
+    Addresslist.value = "";
+    for( index in adrList )
+        Addresslist.value += adrList[index] + "\r\n";
+}
+</script>
+<!--定义一个文本域用以显示地址列表-->
+<textarea id="Addresslist" style="width: 349px; height: 263px" readonly="readOnly"></textarea><br />
+<!--定义一个按钮用以添加新地址-->
+<input type="button" onclick="addNewAddressAndStart()" value="添加新地址" style="width: 349px" />

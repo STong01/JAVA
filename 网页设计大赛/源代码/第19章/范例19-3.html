@@ -1,0 +1,52 @@
+<html lang="zh-cn">
+<head>
+<title>范例19-3</title>
+<script language="javascript">
+	function thisMovie(movieName)					// 定义函数区分不同的浏览器
+	{	
+    		if (navigator.appName.indexOf ("Microsoft") !=-1)	// 如果是IE
+		{
+         		return window[movieName];			// 以Window属性的形式返回影片对象
+    		} 
+		else							// 其它
+		{
+         		return document[movieName];			// 以DOM对象的形式返回影片对象
+    		}
+	}
+	var messageList = new Array();					// 创建消息数组
+	messageList.push( "公告：使用FLASH实现WEB页动态交互更容易！" );	// 压入消息
+	messageList.push( "公告：FLASH，轻松实现WEB交互！" );		// 压入消息
+	var index = 0;							// 消息号
+	var isTimerSet = false;						// 表示定时器是否已经设定
+	function SwfIsReady(arg)					// 定义函数，当FLASH就绪时调用
+	{		
+		if( !isTimerSet )					// 如果还未设定定时器
+		{
+			setInterval( SwfIsReady, 1000 );		// 设定定时器，时隔1秒调用一次SwfIsReady
+			isTimerSet = true;				// 标明已经设定定时器
+		}
+		thisMovie("MessageBoard").SetMessage( messageList[index%2] );	// 调用FLASH对象中的SetMessage函数
+		index++;						// 编号递增
+	}
+</script>
+</head>
+<!--插入FLASH影片对象-->
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+			id="MessageBoard" width="400" height="100"
+			codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+			<param name="movie" value="MessageBoard.swf" />
+			<param name="quality" value="high" />
+			<param name="bgcolor" value="#869ca7" />
+			<param name="allowScriptAccess" value="always" />
+			<embed src="MessageBoard.swf" quality="high" bgcolor="#869ca7"
+				width="400" height="100" name="MessageBoard" align="middle"
+				play="true"
+				loop="false"
+				quality="high"
+				allowScriptAccess="always"
+				type="application/x-shockwave-flash"
+				pluginspage="http://www.adobe.com/go/getflashplayer">
+			</embed>
+</object>
+</body>
+</html>

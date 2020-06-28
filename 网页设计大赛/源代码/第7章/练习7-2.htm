@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>练习7-1</title>
+</head>
+<body>
+<h1</h1>
+<script language="javascript">
+    function mySort( )                              // 不定参数个数的排序函数
+    {
+        var args = new Array();                     // 使用数组作为参数存储容器
+        for( n = 0; n < arguments.length; n++ )     // 提取各实参
+        {
+           args.push( arguments[n] );               // 将实参压入数组
+        }
+        for( i = 0; i < args.length; i ++ )         // 逐一比较，从小到大进行排序
+        {
+            for( j = 0; j < args.length; j ++ ) 
+            {
+                if( args[i] < args[j] ) 
+                {
+                    var tmp = args[i];              // 小的数换到大的数前面
+                    args[i] = args[j];
+                    args[j] = tmp;
+                }
+            }
+        }
+        return args;                                // 返回已经排序的数组
+    }
+    var result = mySort( 5, 1, 6, 3, 2, 9, 7 );     // 对题设中的数字进行排序
+    alert( result );                                // 显示结果
+</script>
+</body>
+</html>

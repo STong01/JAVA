@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Submit 和 Reset 的使用</title>				<!--文档的标题-->
+<script language="JavaScript">						//javascript
+	function allowReset() 							//自定义函数用于设置数据
+	{ 
+	    return window.confirm("确定重置吗？");		//响应 onReset事件
+	}
+	function allowSend()							//自定义函数用于发送数据
+	{
+		return window.confirm("确认发送吗？");		//响应 onSubmit事件
+	}
+</script>											<!--结束javascript-->
+</head>								
+<body>												<!--文档主体-->
+<!-- 设置onReset和 onSubmit事件 -->
+<form  action="" onReset="return allowReset()"onSubmit="return allowSend()"><!--调用allowSend函数-->
+	 name:<input type="text" name="lastName"><P>	<!--姓名文本框-->
+	 address:<input type="text" name="address"><P>	<!--地址文本框-->
+	 city:<input type="text" name="city"><P>			<!--城市文本框-->
+	<input type="radio" name="gender" CHECKED>男	<!--性别单选按钮-->
+	<input type="radio" name="gender">女 <P>		
+	<input type="checkbox" name="retired">同意<P>	
+	<input type="reset">							<!--重置按钮-->
+	<input type="submit">							<!--提交按钮-->
+</form>												<!--表单结束-->
+</body>											
+</html>

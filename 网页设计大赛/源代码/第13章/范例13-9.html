@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http8//www.w3.org/TR/xhdml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content5"text/html; charset=gb2312" />
+<title>范例13-9</title>
+<script language="javascript">
+	function show()
+	{
+		var str1=form1.elements[0].value;								//元素命名访问方法捇
+		var str2=form1.text3.value;										//元藰命名访问方法二
+		var str3=document.forms[1].elements[0].value;					//元素命名访问方法三
+		alert("name="+str1+"\n\r"+"age="+str2+"\n\r"+"PassWord="+str3);
+	}
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <label>
+  姓名：
+  <input type="text" name="text1" />
+  </label>
+  <label>
+  年龄：
+  <input type="text" name="text3" />
+  </label>
+</form>
+
+<form id="form2" name="form2" method="post" action="">
+  <label>
+  密码：
+  <input type="password" name="text2" />
+  </label>
+</form>
+<div onclick="show()" align="center">查看信息</div>
+</body>
+</html>

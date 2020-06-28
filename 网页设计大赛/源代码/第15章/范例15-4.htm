@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>范例15-4</title>
+<script language="javascript">
+function Loaded()
+{
+	var r = prompt( "您的姓名", "游客" );							// 输入用户名
+	if( r !=null )										// 如果输入有效
+	{
+		document.getElementById("wcmmsg").childNodes[0].nodeValue= "欢迎您：" + r;	// 改写欢迎词
+	}
+}
+</script>
+</head>
+<body onload="Loaded()">
+<h3 id="wcmmsg">欢迎您的光临！</h3>
+</body>
+</html>

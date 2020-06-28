@@ -1,0 +1,34 @@
+<input type="text" id="NUM_1" isDirty="0" onblur="OnBlur(this)"/>+<!--数字1-->
+<input type="text" id="NUM_2" isDirty="0" onblur="OnBlur(this)"/>=<!--数字2-->
+<input type="text" id="RESULT"/>																	<!--结果-->
+<script language="javascript">																		// 脚本程序
+function OnBlur( obj )																						// 文本框事件处理
+{
+		if( obj.id == "NUM_1" )																				// 如果是文本框1
+		{
+			if( NUM_2.isDirty == 1 )																		// 如果文本框2已经改动
+			{
+					RESULT.value=parseFloat(NUM_1.value)+parseFloat(NUM_2.value);//输出两个数的和
+					NUM_2.isDirty = "0";																		// 清除改动标志
+					NUM_1.isDirty = "0";
+			}
+			else																												// 如果只填写数字1
+			{
+					NUM_1.isDirty="1";																			// 将文本框1标记为已经改动
+			}
+		}
+		else																													// 如果当前为文本框2
+		{
+				if( NUM_1.isDirty == 1 )																	// 如果文本框1也改动过
+				{
+					RESULT.value=parseFloat(NUM_1.value)+parseFloat(NUM_2.value);	// 输出两个数的和
+					NUM_2.isDirty = "0";																		// 清除改动标志
+					NUM_1.isDirty = "0";
+				}
+				else																											// 如果只填写了一个数
+				{
+					NUM_2.isDirty="1";																			// 标记为已经改动
+				}
+		}
+} 
+</script>

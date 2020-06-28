@@ -1,0 +1,15 @@
+<script language="javascript">
+function GetCharCount( textObj )
+{
+  	if (textObj.length > 10)
+	{
+      		alert("请重新输入你的姓名（少于10个字符）");
+	}
+   	else
+	{
+      		alert("您输入了"+textObj.length+"个字符");
+	}
+ }
+</script>
+请输入您的姓名(少于10个字符):
+Name: <INPUT TYPE="text" NAME="userName" onBlur="GetCharCount(userName.value)"> 

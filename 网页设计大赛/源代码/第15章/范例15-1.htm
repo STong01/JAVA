@@ -1,0 +1,24 @@
+<html><head><title>范例15-1</title><script language="javascript">			// 脚本程序开始			
+function Loaded()
+{
+	for(  n=0; n !=document.documentElement.childNodes.length; n++ )		// 遍历顶级元素的子元素
+	{
+		var text = "";								// 信息文本
+		nodes = null;								// 引用BODY节点的所有子节点
+		if( document.documentElement.childNodes[n].nodeName=="BODY" )		// 如果是BODY节点
+		{
+			nodes = document.documentElement.childNodes[n].childNodes;	// 引用其所有子节点
+			for( m = 0; m != nodes.length; m++ )				// 遍历BODY的所有子节点
+			{
+				text += "\n" + nodes[m].nodeName;			// 记录节点名
+			}
+			text = "<BODY>节点下的所有子节点为：" + text;			// 组合信息文本
+			alert( text );							// 对话框显示
+			break;								// 跳出循环
+		}
+	}
+}
+</script></head><body onload="Loaded()">						<!--绑定事件处理程序-->
+<h1>DOM编程，访问节点元素的所有子节点：</h1>						<!--标题1-->
+<h2>XML文件在浏览器中也可以使用DOM接口来处理!</h2>					<!--标题2-->
+</body></html>										<!--文档结束-->

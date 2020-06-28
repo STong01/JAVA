@@ -1,0 +1,47 @@
+<script language="javascript">
+var selItm = new Array(4);
+for (i=0; i<4; i++){
+	selItm[i] = new Array();
+}
+selItm[0][0] = new Option("请选择", " ");					//定义基本选项
+selItm[1][0] = new Option("小学数学", "小学数学");
+selItm[1][1] = new Option("小学语文", "小学语文");
+selItm[1][2] = new Option("小学英语", "小学英语");
+selItm[2][0] = new Option("中学数学", "中学数学");
+selItm[2][1] = new Option("中学物理", "中学物理");
+selItm[2][2] = new Option("中学语文", "中学语文");
+selItm[2][3] = new Option("中学英语", "中学英语");
+selItm[2][4] = new Option("中学政治", "中学政治");
+selItm[3][0] = new Option("大学数学", "大学数学");
+selItm[3][1] = new Option("大学物理", "大学物理");
+selItm[3][2] = new Option("大学语文", "大学语文");
+selItm[3][3] = new Option("大学英语", "大学英语");
+selItm[3][4] = new Option("大学政治", "大学政治");
+function OnS1Change(x){
+	var temp = document.form1.sel12; 
+	for (i=0;i<selItm[x].length;i++){
+	   	 temp.options[i]=new Option(selItm[x][i].text,selItm[x][i].value);	// 实例化对象	
+	}
+	temp.options[0].selected=true;							//显示菜单1的初始值
+}
+function OnS2Change(str1,str2){
+	if(str1>0){
+		switch(str1){								// 判断身分
+			case 1:str1="小学生";break;
+			case 2:str1="中学生";break;
+			case 3:str1="大学生";break;
+		}
+		alert("您的身分是："+str1+"\n您最喜欢的科目是："+str2);			// 输出 信息
+	}
+	else
+		alert("您没有选择身分");
+}
+</script>
+<form name="form1" method="post" action="">
+<label>您的身分是：<select name="sel1" onChange="OnS1Change(this.value)">
+<option value="0">请选择</option><option value="1">小学生</option>
+<option value="2">中学生</option><option value="3">大学生</option>
+</select>您最喜欢的科目：</label><label><!--  创建的菜单2-->
+<select name="sel12"/></label><label><!--  收集所选择的信息-->
+<input type="submit" name="Submit" value="确定" onClick="OnS2Change(sel1.value,sel12.value)">
+</label></form>

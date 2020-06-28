@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.q{
+    width: 100%;
+    height: 80px;
+}
+div input{
+    position: relative;
+    left: 413px;
+    width: 540px;
+    height: 36px;
+}

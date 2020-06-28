@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>查看网站目录</title>
+<script language="javascript">
+function showRoot()
+{
+	links=document.all.tags('a');//找到所有的链接，并存放在links中
+	var n=links.length;			 //取得超链接的个数
+	var path=new Array(n);		 //定义一个数组，用于存放路径
+	var k=0;
+	for(var i=0;i<n;i++)
+	{
+		//查看的是本地网站的目录，因些下面的localhost和127.0.0.1可以换成你想要网站的hostname
+		if(document.links[i].href.indexOf("localhost")!=-1||document.links[i].href.indexOf("127.0.0.1")!=-1)
+		{
+			 path[k]=document.links[i].pathname;//将路径存放在path数组中
+			 k++;
+		 }
+	}
+	var str="";
+	var s="";
+	for(var j in path)
+	{
+		s=path[j].split("/");		//以”/“为标志分开各级路径并存入s 数组中
+		for(l=0;l<s.length-1;l++)  //将路径存放在字符串str中
+		{
+			str+=s[l]+"/";			//取得除最后一个元素以外的各级路径
+		}
+		str+="\n";
+	}
+	alert("网站的目录为：\n"+str);//显示路径
+}
+</script>
+</head>
+<body onload="showRoot()">
+<a href="file:///D|/usr/www/html/database/index.html">链接数据库主页</a>
+<a href="file:///D|/usr/www/html/database/SQL/EmplDir_MySQL.sql">链接SOL数据库</a>
+<a href="file:///D|/usr/www/html/Editor/editor.htm">链文本接编辑器</a>
+<a href="file:///D|/usr/www/html/Editor/HtmlEditor/smile/smile16.gif">查看图片</a>
+</body>
+</html>

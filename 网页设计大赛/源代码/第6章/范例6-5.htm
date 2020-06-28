@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例6-5</title>
+</head>
+<body>
+<script language="javascript">
+ function a()                   // a为最外层函数
+ {
+    function b()                // b为第1层函数
+    {
+        function c()            // c为第2层函数
+        {
+             document.write( "<li>C" );
+        }
+        document.write( "<li>B" );
+    }
+    document.write( "<li>A" );
+    b();                        // a的代码调用a的私有函数b
+    c();                        // a的代码偿试调用b的私有函数，将发生一个错误
+ }
+ a();                           // 调用a
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>练习19-1</title>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+    var isPause = false;
+    function thisMovie(movieName)					            // 定义函数区分不同的浏览器
+	{	
+    		if (navigator.appName.indexOf ("Microsoft") !=-1)	// 如果是IE
+		    {
+         		return window[movieName];			            // 以Window属性的形式返回影片对象
+    		} 
+		    else							                    // 其它
+		    {
+         		return document[movieName];			            // 以DOM对象的形式返回影片对象
+    	    }
+	}
+    function Button1_onclick()
+    {
+        if( isPause )                                           // 如果正在播放 
+        {
+            MPlayer.controls.pause();                           // 暂停
+            Button1.value = "播放";                             // 更改按钮标题
+        }
+        else                                                    // 如果已经暂停
+        {
+            MPlayer.controls.play();                            // 播放
+            Button1.value = "暂停";                             // 更改按钮标题
+        }
+        isPause = !isPause;                                     // 每一次点击后状态取反
+    }
+// ]]>
+</script>
+</head>
+<body>
+<div align="center">
+<object id="MPlayer" height="64" width="260" name="MPlayer" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6"> 
+    <param name="URL" value="test.mp3" />
+</object><br />
+<input id="Button1" type="button" value="控制" onclick="return Button1_onclick()" />
+</div>
+</body>
+</html>

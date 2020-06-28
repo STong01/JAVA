@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例 5-5</title>
+</head>
+<body id="PageBody" style="background:red"><!--设定body节点的ID，以便在JavaScript代码中操作-->
+<script language="javascript">
+function ChangeBgColor( colorIndex )
+{
+    var dombody = document.getElementById( "PageBody" );   // 获取body节点
+    if( dombody == null )                                   // 如果没有body节点将直接返回
+    {
+        return;
+    }
+    else                                                    // body节点成功获取
+    {
+        switch( colorIndex )                        // 使用多路开关语句根据菜单传入的值更改网页背景
+        {
+        case 1:
+            dombody.style.background = "#666666";   // 通过设定style元素的background属性以改变背景
+            break;
+        case 2:
+            dombody.style.background = "#003333";
+            break;
+        case 3:
+            dombody.style.background = "#ccccff";
+            break;
+        case 4:
+            dombody.style.background = "#6699cc";
+            break;
+        default:
+            dombody.style.background = "white";     // 
+            break;
+         }
+    }
+} 
+</script>
+<!--各颜色菜单，用户点击菜单时，背景颜色将变为与菜单相同的颜色-->
+    <div style="width: 100px; height: 20px; text-align:center; background-color: #666666;" onclick="return ChangeBgColor( 1 )">
+    </div>
+    <div style="width: 100px; height: 20px; text-align:center; background-color: #003333;" onclick="return ChangeBgColor( 2 )">
+    </div>
+    <div style="width: 100px; height: 20px; text-align:center; background-color: #ccccff;" onclick="return ChangeBgColor( 3 )">
+    </div>
+    <div style="width: 100px; height: 20px; text-align:center; background-color: #6699cc;" onclick="return ChangeBgColor( 4 )">
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>综合练习7-1</title>
+</head>
+<body>
+<h1>Stack（堆栈）对象的测试</h1>
+<script language="javascript">
+    function Stack()                    // 定义一个Stack（堆栈）对象的构造函数
+    {
+        var DateStorage = new Array();  // 创建一个数组作为数据仓库
+        this.push = function( obj )     // push方法，压入数据对象
+        {
+            DateStorage.push( obj );    // 将数据存入仓库
+        }
+        this.pop = function()           // pop方法，从栈中弹出数据对象
+        {
+            return DateStorage.pop();   // 数据从仓库取出
+        }
+    }
+    var cartridge_clip = new Stack();   // 测试Stack对象，模拟一个弹夹
+    cartridge_clip.push( "子弹1" );     // 压入5颗子弹
+    cartridge_clip.push( "子弹2" );
+    cartridge_clip.push( "子弹3" );
+    cartridge_clip.push( "子弹4" );
+    cartridge_clip.push( "子弹5" );
+    document.write( "<li>子弹入夹顺序：子弹1 子弹2 子弹3 子弹4 子弹5<br>" );    // 输出子弹入夹顺序
+    document.write( "<li>子弹出夹顺序：" );
+    for( ; ; )                          // 循环弹出夹中所有子弹
+    {
+        var cur = cartridge_clip.pop(); // 当前弹出的位于最顶端的子弹
+        if( cur == null )               // 如果子弹弹尽时，跳出循环
+        {
+            break;
+        }
+        document.write( cur + " " );    // 输出当前子弹名称
+    }
+</script>
+</body>
+</html>

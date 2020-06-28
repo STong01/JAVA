@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>范例20-2</title>
+<script language="javascript">
+		function Logger()						// 日志对象构造函数
+		{
+			function Record( _Serial, _Message)	// 记录对象构造函数
+			{
+				this.Serial = _Serial;			// 记录编号
+				this.LogMessage = _Message;		// 记录信息
+				this.date = new Date();			// 记录时间
+			}
+			this.RecordList = new Array();		// 创建数组容器
+			this.Index = 0;						// 记录索引
+			this.Log = function( info )			// “添加日志”函数
+			{
+				var newLog = new Record( ++this.Index, info );	// 创建一个新记录对象
+				this.RecordList.push( newLog );	// 将记录对象压入数组		
+			}
+			this.ShowLog = function( _mode )	// 显示记录信息
+			{
+				var info = "";					// 分析出的日志信息文本
+				for ( n in this.RecordList )	// 逐一分析记录数组
+				{
+					if( _mode == 0 )			// 显示模式0
+					{
+						info += "<li>" + this.RecordList[n].Serial + "（" 
+								+ this.RecordList[n].date.toLocaleString() +"）：" 
+								+ this.RecordList[n].LogMessage + "<br>";		// 格式化信息
+						if( n == (this.RecordList.length-1) )	
+						{
+							document.write( info );		// 在当前文档输出
+						}				
+					}
+					else if( _mode == 1 )				// 显示模式1
+					{
+						info += "#" + this.RecordList[n].Serial + "（" 
+								+ this.RecordList[n].date.toLocaleString() +"）：" 
+								+ this.RecordList[n].LogMessage + "\n";			// 格式化信息
+						if( n == (this.RecordList.length-1) )
+						{
+							alert( info );						// 以对话框的形式输出
+						}
+					}				
+				}
+				return info;									// 将格式化后的信息返回给调用者
+			}
+		}
+		var g_log = new Logger();								// 创建一个全局日志对象
+</script>
+</head>
+<body>
+<script language="javascript">	
+		var balance = 200.0;									// 当余额
+		g_log.Log( "balance:" + balance );						// 上一步操作后，添加日志
+		var willPay = 20.0;										// 当前该付金额
+		g_log.Log( "willPay:" + willPay ); 
+		function pay( _balance, _pay )							// 付账动作
+		{
+			g_log.Log( "_balance:" + _balance );
+			g_log.Log( "_pay:" + _pay ); 
+			return _balance - _pay;								// 从余额中减去该付的数额
+		}
+		function ShowBalance()			
+		{
+			var blnc = pay( balance, willPay );					// 付账
+			g_log.Log( "blnc:" + blnc );
+			document.write( "当前余额：" + blnc );				// 输出余额
+		}
+		ShowBalance();											// 显示余额
+		g_log.ShowLog(1);										// 输出日志信息
+</script>
+</body>
+</html>

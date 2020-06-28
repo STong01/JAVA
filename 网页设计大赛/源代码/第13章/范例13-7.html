@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>范例13-7</title>
+<script language="javascript">
+	function Reset()
+	{
+		var result=confirm("你确定重置吗？");//询问用户是否确定重置表单
+		return result;						  //返回结果
+	}
+</script>
+</head>
+<!---->
+<body>
+<form id="form1" name="form1" method="post" action="" onreset="return Reset()">
+  姓名：
+  <label>
+  <input type="text" name="textfield" />
+  <br />
+  <br />
+  年龄：
+  <input type="text" name="textfield2" />
+  <br />
+  <br />
+  地址：
+  <input type="text" name="textfield3" />
+  <br />
+  <input type="submit" name="Submit" value="提交" />
+  <input type="reset" name="Submit2" value="重置" />
+  <br />
+  </label>
+</form>
+</body>
+</html>

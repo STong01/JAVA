@@ -1,0 +1,22 @@
+<script language="javascript">								// 脚本程序开始
+function strCon(str)											// 连接字符串
+{
+	if(str!='请选择')										// 如果选择的是默认项
+	{
+		form1.text.value="您选择的是："+str;					// 设置文本框提示信息
+	}
+	else													// 否则
+	{
+		form1.text.value="";								// 设置文本框提示信息
+	}
+}
+</script>													<!-- 脚本程序结束 -->
+<form id="form1" name="form1" method="post" action="">		<!--表单-->
+<label>
+<textarea name="text" cols="50" rows="2" onSelect="alert('您想复制吗？')"></textarea>
+</label><p><label><select name="select1" onchange="strAdd(this.value)" >
+<option value="请选择">请选择</option><option value="北京">北京</option><!--选项-->
+<option value="上海">上海</option><option value="武汉">武汉</option><!--选项-->
+<option value="重庆">重庆</option><option value="南京">南京</option><!--选项-->
+<option value="其它">其它</option></select></label></p>	<!--选项-->
+</form>

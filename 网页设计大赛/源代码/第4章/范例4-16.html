@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>范例4-16</title>
+</head>
+	<body>
+	<!--配置一个文件输入框和一个按钮，与用户交互用-->
+	<li>50点点卡单价为4.5元，您确定购买
+	<input id="Text1" style="width: 31px; height: 18px" type="text" />张。
+	<input id="Button1" type="button" value="确定支付" onclick="return Button1_onclick()" />
+	(最多不能超过5张)
+	<script language="javascript">
+	<!--
+	function Button1_onclick()                     // 按钮单击事件处理程序
+	{
+	    if( (Text1.value < 1) || isNaN(Text1.value) )   // 输入小于0或不是数字，则清除文本框内容并要求重输
+	    {
+	        alert( "您的输入不正确，请重新输入" );
+	        Text1.value = "";
+	    }
+	    else                                      // 输入合法则统计总金额
+	    {
+	        alert( "您的应当支付：" + Text1.value * 4.5 + "元" );
+	    }
+	}
+	-->
+	</script>
+	</body>
+
+</html>

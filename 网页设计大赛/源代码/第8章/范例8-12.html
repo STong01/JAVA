@@ -1,0 +1,24 @@
+	<title>范例8-12</title>
+	<script language="javascript">
+	function press()					// 击键事件处理程序
+	{
+		form1.text.value="这是onKeypress事件";
+	}
+	function down()						// 键按下事件处理程序
+	{
+		form1.text.value="这是onKeydown事件";
+	}
+	function up()						// 键释放事件处理程序
+	{
+		form1.text.value="这是onKeyup事件";
+	}
+	</script>
+	</head>
+	<body onkeydown="down()" onkeyup="up()" onKeypress="press()" >
+	<form id="form1" name="form1" method="post" action="">
+	  <label>
+	  <textarea name="text" cols="50" rows="2"></textarea>
+	  </label>  
+	</form>
+	按键盘触发键盘事件
+	</body>

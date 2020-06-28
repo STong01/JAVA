@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例7-9</title>
+</head>
+<body>
+<h1>splice的使用示例</h1>
+<script language="javascript">
+    var queueA = new Array();           // 体操队列A
+    queueA.push( "学生A", "学生B", "学生C", "学生D", "学生E", "学生F"); // 队员进队
+    document.write( "<li>原来的队伍A：<br>" + queueA );                 // 输出队伍A的成员
+    var queueB = queueA.splice( 2, 3 ); // 从A队中的第3位学生开始抽出3名学生按顺序组成一个新队
+    document.write( "<br><li>调整后的队伍A：<br>" + queueA );           // 输出裁员后的队伍A
+    document.write( "<br><li>新建的队伍B：<br>" + queueB );             // 输出从队伍A中切取成员形成的队伍B
+    queueA.splice( 1,0, "学生1", "学生2" );                             // 从队伍A的第2个学生处起插入两名学生
+    document.write( "<br><li>添加后的队伍A：<br>" + queueA );           // 输出插入学生后的队伍A
+</script>
+</body>
+</html>

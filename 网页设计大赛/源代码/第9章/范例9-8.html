@@ -1,0 +1,14 @@
+<script language="javascript">
+function OnClosing()										// 关闭前事件处理程序
+{
+	if( window.confirm("真的要关闭？") )	// 询问
+	{
+		return true;												// 确定关闭
+	}
+	else
+	{
+			return false;											// 不关闭
+	}	
+}
+</script>
+<body onbeforeunload="return OnClosing()"/>	<!--绑定事件处理程序-->

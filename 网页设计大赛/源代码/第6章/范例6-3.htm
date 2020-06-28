@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例6-3</title>
+</head>
+<body>
+<script language="javascript">
+    function SortNumber( obj, func )                // 定义通用排序函数
+    {
+        // 参数验证，如果第一个参数不是数组或第二个参数不是函数则抛出异常
+        if( !(obj instanceof Array) || !(func instanceof Function)) 
+        {
+            var e = new Error();                    // 生成错误信息
+            e.number = 100000;                      // 定义错误号
+            e.message = "参数无效";                 // 错误描述
+            throw e;                                // 抛出异常
+        }
+        for( n in obj )                             // 开始排序
+        {
+            for( m in obj )                         
+            {
+                if( func( obj[n], obj[m] ) )        // 使用回调函数排序，规则由用户设定
+                {
+                    var tmp = obj[n];               
+                    obj[n] = obj[m];
+                    obj[m] = tmp;
+                }
+            }
+        }
+        return obj;                                 // 返回排序后的数组
+    }
+    function greatThan( arg1, arg2 )                // 回调函数，用户定义的排序规则
+    {
+        return arg1 > arg2;                         // 规则：从大到小
+    }
+    try
+    {
+        var numAry = new Array( 5,8,6,32,1,45,7,25 );   // 生成一数组
+        document.write("<li>排序前："+numAry);          // 输出排序前的数据
+        SortNumber( numAry, greatThan )                 // 调用排序函数
+        document.write("<li>排序后："+numAry);          // 输出排序后的数组
+    }
+    catch(e)
+    {
+        alert( e.number+"："+e.message );               // 异常处理
+    }
+</script>
+</body>
+</html>

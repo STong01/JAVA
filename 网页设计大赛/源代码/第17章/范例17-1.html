@@ -1,0 +1,24 @@
+<script language="javascript" type="text/javascript">
+	function CreateHttpRQ()
+	{
+		if( window.navigator.appName == "Microsoft Internet Explorer" )	// 如果是IE
+		{
+			try																														// 捕捉异常
+			{
+				return new ActiveXObject( "Microsoft.XMLHTTP" );						// 创建XMLHttpRequest
+			}
+			catch(E)																											// 处理异常
+			{
+				return null;																								// 返回空值
+			}
+		}
+		else																														// 其它浏览器
+		{
+			return new XMLHttpRequest();																	// 返回创建的对象
+		}
+	}
+	if( CreateHttpRQ() != null )																			// 如果创建成功
+	{
+		window.status = "XMLHttpRequest对象创建成功～！";								// 在状态栏上输出提示
+	}	
+</script>

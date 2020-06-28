@@ -1,0 +1,15 @@
+<html>
+<head><title>范例11-15</title>				<!--文档的头-->
+<script language = "JavaScript">			//javascrip开始
+function changeImg() 
+{
+     newImage = new Image(); 				//创建一个图像对象
+     newImage.src = "flower.jpg";			//设置图像对象的src属性
+}
+</script>
+</head>
+<body onLoad="javascript:changeImg()">		<!--调用changeImg -->
+<a href="#" onMouseOver="javascript:document.img01.src='flower.jpg'"><!--响应鼠标事件的链接 -->
+<img name="img01" src="flower1.jpg"></a>	<!--图片标签-->
+</body>
+</html>

@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<TITLE>范例19-1</TITLE>
+</HEAD>
+<BODY>
+<p align="center">
+ActiveX组件使用示例
+<br />
+<!--嵌入MessageBoard组件，其CLASSID为F9C695B2-5569-4F28-88FD-D9EB4E41055E-->
+<OBJECT ID="MsgBoardCtl" CLASSID="CLSID:F9C695B2-5569-4F28-88FD-D9EB4E41055E" width="400" height="100"></OBJECT>
+</p>
+<script language="javascript">
+	var messageList = new Array();						// 创建公告消息数组
+	messageList.push( "您知道吗，这是使用ActiveX控件发布的通知！" );	// 压入消息项	
+	messageList.push( "您知道吗，使用ActiveX控件可以实现十分强大的功能！" );
+	messageList.push( "您知道吗，使用ATL制作ActiveX控件非常方便！" );
+	var index = 0;								// 消息号
+	function onClickIn( x, y )						// 处理MessageBoard的单击事件
+	{
+		index++;					
+		MsgBoardCtl.msgText = messageList[index%3];			// 将消息数组中的数据设置为MessageBoard组件的msgText属性
+	}
+</script>
+<script language="javascript" for="MsgBoardCtl" event="ClickIn(x,y)">		// 绑定MessageBoard的ClickIn消息处理程序
+	onClickIn( x, y )
+</script>
+</BODY>
+</HTML>

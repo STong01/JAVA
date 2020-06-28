@@ -1,0 +1,1 @@
+服务器PHP程序如示例代码18-5所示，其主要负责响应XMLHttpRequest对象的HTTP请求。从URL参数中提取文件名，打开服务器的文件，读取内容并作为HTTP响应数据返回给XMLHttpRequest对象。

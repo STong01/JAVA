@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>示例5-11</title>
+</head>
+<body>
+<script language="javascript">
+try
+{
+    var n = error;          // 人为引发一个错误
+}
+catch( e )            
+{
+    alert( (e.number&0xFFFF) + "号错误：" + e.description );// 错误处理：仅输出错误信息
+}
+</script>
+</body>
+</html>

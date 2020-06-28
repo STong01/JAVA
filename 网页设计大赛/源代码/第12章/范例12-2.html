@@ -1,0 +1,9 @@
+<script language="javascript">							// 程序开始
+var scnds = 5;									// 5秒
+function Go()									// 处理定时器事件
+{
+	if( --scnds == 0 ) window.location.href="http://www.baidu.com"; 	// 时间到时跳转
+	else INFO.innerHTML="浏览器将在" + scnds + "后跳转到“百度”首页" ;	// 输出提示
+}
+setInterval("Go()",1000);							// 设置定时器
+</script><label id="INFO"/>							<!--信息标签-->

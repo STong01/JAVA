@@ -1,0 +1,54 @@
+<html lang="zh-cn">
+<head>
+<title>练习19-2</title>
+<script language="javascript">
+	function thisMovie(movieName)					// 定义函数区分不同的浏览器
+	{	
+    	if (navigator.appName.indexOf ("Microsoft") !=-1)	// 如果是IE
+		{
+         		return window[movieName];			// 以Window属性的形式返回影片对象
+    	} 
+		else							                        // 其它
+		{
+         		return document[movieName];			// 以DOM对象的形式返回影片对象
+    	}
+	}
+	var PointList = new Array();					// 创建坐标数组
+	var yBase = 100;
+	var xBase = 100;
+	PointList.push( xBase+0, yBase+100, xBase+100, yBase+0, xBase+200, yBase+100, xBase+300, yBase+0 );	        // 压入坐标数据
+	var isTimerSet = false;						    // 表示定时器是否已经设定
+	function SwfIsReady()					        // 定义函数，当FLASH就绪时调用
+	{		
+		thisMovie("GReport").ClearData();           // 调用FLASH方法清除坐标数组中的数据数
+		for( n in PointList )                       // 所有坐标逐一压入传送到FLASH中
+		{
+		    var rs = thisMovie("GReport").SetGraphData( PointList[n] ); // 调用FLASH方法传送数据
+		    if( rs == null )                        // 如果调用失败
+		    {
+		        alert( "调用SWF方法失败，请检查Flash安全设置！" );
+		    }
+		}
+	}
+</script>
+</head>
+<!--插入FLASH影片对象-->
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+			id="GReport" width="100%" height="100%"
+			codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+			<param name="movie" value="GReport.swf" />
+			<param name="quality" value="high" />
+			<param name="bgcolor" value="#869ca7" />
+			<param name="allowScriptAccess" value="always" />
+			<embed src="GReport.swf" quality="high" bgcolor="#869ca7" 
+				width="100%" height="100%" name="GReport" align="middle" 
+				play="true" 
+				loop="false" 
+				quality="high" 
+				allowScriptAccess="always"  
+				type="application/x-shockwave-flash" 
+				pluginspage="http://www.adobe.com/go/getflashplayer">
+			</embed>
+</object>
+</body>
+</html>

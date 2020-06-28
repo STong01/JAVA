@@ -1,0 +1,9 @@
+<input type="submit" name="Submit" value="单击我" onclick="Size(10,1000)">
+<script language="javascript">
+function Size(x,y)
+{
+	self.resizeBy(x,y);
+	alert("窗口长宽已经改变，你看到了吗？注意还在变哦！");
+	self.resizeTo(y,x);
+}
+</script>

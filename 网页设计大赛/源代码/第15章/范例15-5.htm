@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例15-5</title>
+    <script language="javascript">
+    function Loaded()					// 文档全部加裁后执行本函数
+    {
+		for( ;; )
+		{
+			var url = prompt( "请输入图片的URL地址：", "#" );	// 输入图片的URL
+			if( url != null )				// 输入确定时
+			{
+				try							// 捕捉异常
+				{
+					var docBody = document.getElementById( "DocBody" );	// 获取HTML文档的BODY节点
+					imgObj = document.createElement( "<img>" );			// 创建一个新的IMG节点对象
+					imgObj.src = url;									// 为IMG对象设置图片的URL
+					docBody.appendChild( imgObj );						// 将图片节点对象添加为BODY节点的子节点
+				}
+				catch( e )												// 处理异常
+				{
+					alert( "程序发生了错误：" + e.message );			// 输出异常消息
+				}
+			}
+			else
+			{
+				break;						// 取消输入则跳出循环
+			}
+		}
+    }
+    </script>
+</head>
+<body id="DocBody" onload="Loaded()">
+</body>
+</html>

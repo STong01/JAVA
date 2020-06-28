@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>范例4-25</title>
+</head>
+<body>
+<script language="javascript">
+<!--
+  var student = new Object();       // 创建一个对象表示学生
+  student.name = "Tom";             // 为学生对象添加“名字”属性
+  student.age = 20;                 // 添加“年龄”属性
+  student.sex = "男";               // 添加性别属性
+  document.write( "<li>" + student["name"] + "：" + student["sex"] + " " + student["age"] );    // 输出学生的三个属性
+  delete student.age;                                                                           // 删除学生的“年龄”属性
+  document.write( "<br>删除了age属性<br><li>" + student["name"] + "：" + student["sex"] + " " + student["age"] );   // 再次输出全部属性作对比
+--> 
+</script>
+</body>
+</html>
+

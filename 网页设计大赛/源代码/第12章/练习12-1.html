@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>练习12-1</title>
+<script language="javascript">
+function check()
+{
+	var strName=usr.value; //取得用户输入的用户名
+	var strPsd=psd.value;  //取得用户输入的密码
+	// 判断是否登录成功
+	if(strName=="zhang" && strPsd=="8030204")
+	{   
+	 	var url="http://mail.163.com";		
+		alert("登录成功！");
+		location.replace(url);
+	}
+	else
+	{
+		// 当密码或用户名不对是时，重新回到页面
+		alert("用户名或密码有误，请重新登录！");
+		psd.value="";
+		window.location.back(-1);
+	}	
+}
+function reset()// 实现重置
+{
+	psd.value="";
+	usr.value="";
+}
+</script>
+</head>
+<body>
+  <p align="center">用户登录</p>
+  <p align="center">用户名：
+    <input type="text" name="usr" />
+  </p>
+  <label></label>
+  <p align="center">密  码：
+    <label>
+    <input type="password" name="psd" />
+    </label>
+  </p>
+  <!-- 相当于发送按钮和重设按钮的超链接-->
+  <p align="center"><a href="javascript:submit()" onclick="check()" >提交</a>   
+  <a href="javascript:reset()"> 重置</a></p>
+</body>
+</html>

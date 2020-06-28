@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例7-8</title>
+</head>
+<body>
+<h1>concat的使用示例</h1>
+<script language="javascript">
+    var queueA = new Array( "顾客1", "顾客2", "顾客3", "顾客4", "顾客5" );  // 窗口A前的队伍A
+    var queueB = new Array( "顾客A", "顾客B", "顾客C", "顾客D", "顾客E" );  // 窗口B前的队伍B
+    var qa = queueA.join( "-" );                                            // 组合队伍A的成员，使用“-”格开
+    var qb = queueB.join( "-" );                                            // 组合队伍B的成员，使用“-”格开
+    document.write( "窗口前的两个队伍：" );                                 
+    document.write( "<br><li>" + qa );                                      // 输出队伍A的成员                                   
+    document.write( "<br><li>" + qb );                                      // 输出队伍B的成员
+    queueA = queueA.concat( queueB );                                       // 将队伍B接到队伍A的后面
+    qa = queueA.join( "-" );                                                // 组合合并后的队伍，使用“-”格开
+    document.write( "<br>将队伍B合并到队伍A：" );                           
+    document.write( "<br><li>" + qa );                                      // 输出合并后的队伍成员
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>显示浏览次数</title>
+<script language="javascript">
+function writeCookie(name,value,day)
+{
+	var expire="";
+	expire=new Date((new Date()).getTime()+day*86400000);//设置存活期
+	//toGMTString() 方法可根据格林威治时间 (GMT) 把 Date 对象转换为字符串，并返回结果
+	expire=";expires="+expire.toGMTString();
+	document.cookie=name+"="+escape(value)+";"+expire;// 设置cookie变量	
+}
+function readCookie(name)
+{
+	var allcookies = document.cookie;
+			var value=null;
+			var searchs=name+"=";
+			if(allcookies.length>0)						//查看cookie是否为空
+			{
+				var offset=allcookies.indexOf(searchs);//找到要查找的变量名
+				if(offset!=-1)							//判断所查找的变量名是否存在
+				{
+					offset+=searchs.length;
+					var end=allcookies.indexOf(";",offset);	//找到变量值的结束位置
+					if(end==-1)							//防止没加“；”号的情况发生
+					{
+						end=allcookies.length;
+					}
+					value=unescape(allcookies.substring(offset,end));//取得变量的值
+					
+				}
+			}
+			return value;
+			
+}
+</script>
+</head>
+<body>
+<script language="javascript">
+name="";
+var count=0;
+newName=prompt("请输入您的姓名","");
+if(newName)
+{
+	name=readCookie("name");
+	if(name!=newName)
+	{
+		// 当新客户访问这个页面时，注册新的用户名和访问次数
+		writeCookie("name",newName,30);
+		writeCookie("count",1,30);
+	}
+	else
+	{
+		// 以下三句实现访问的累加
+		count=readCookie("count");
+		count++;
+		writeCookie("count",count,30);
+	}
+	document.write("您好！"+readCookie("name")+",您是第"+readCookie("count")+"次光临本网站");
+}
+else
+{
+	alert("您没有输入你姓名，您不能访问该网页");
+	window.close();
+}
+</script>
+</body>
+</html>

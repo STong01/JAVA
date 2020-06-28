@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>范例15-2</title>
+<script language="javascript">
+function Loaded()
+{
+	for(  n=0; n !=document.documentElement.childNodes.length; n++ )	// 遍历顶级元素的子元素
+	{
+		var text = "";													// 信息文本
+		cnodes = null;													// 引用BODY节点的所有子节点
+		if( document.documentElement.childNodes[n].nodeName=="BODY" )	// 如果是BODY节点
+		{
+			cnodes = document.documentElement.childNodes[n].childNodes;	// 引用其所有子节点
+			for( m = 0; m != cnodes.length; m++ )						// 遍历BODY的所有子节点
+			{
+				text += "\n名称：" + cnodes[m].nodeName + "类型：" + cnodes[m].nodeType;	// 记录节点名
+			}
+			text = "<BODY>节点下的所有子节及其类型信息：" + text;							// 组合信息文本
+			alert( text );											// 对话框显示
+			break;													// 跳出循环
+		}
+	}
+}
+</script>
+</head>
+<body onload="Loaded()">
+<h1>
+	DOM编程，检测节点类型：
+</h1>
+<h2>
+	XML文件在浏览器中也可以使用DOM接口来处理！
+</h2>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>getElementById方法的举例</title>
+<script type="text/javascript">
+function getValue()
+{ 
+ 	var x=document.getElementById("myHeader");	//取得id值为myHeader的标签的值
+	// innerHTML获得从对象的起始位置到终止位置的全部内容,包括Html标签
+  	 alert(x.innerHTML);						//输出信息
+}</script>
+</head>
+<body>
+<h1 id="myHeader" onClick="getValue()">单击这里</h1>
+</body>
+</html>

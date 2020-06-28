@@ -1,0 +1,50 @@
+<html>
+	<head><title>cookie的参数</title>						
+		<script language="javascript">						
+			function setCookie()								
+			{ 
+				var value=prompt("请输入cookie变量的值","");	//接收用户输入的值
+				if(value!=null)								//判断value是否为空
+				{				
+					var expiration = new Date((new Date()).getTime() + 10 * 60000);//设置cookie存活期
+					document.cookie = "username=" + escape(value)+ "; expires ="+ expiration.toGMTString()+";path=/;domain=localhost;secure";
+					alert("设置cookie值成功编码结果为：username="+escape(value));
+				}
+				else
+				{
+					alert("设置失败，你没有输入任何值！");			//检查输入是否为空
+				}
+			}
+			function getCookie(cookie_name)						//自定义函数用于获取cookie的值
+			{
+				var allcookies = document.cookie;					//声明一个变量allcookies
+				var value=null;
+				alert( allcookies)									//将value的初始值设为空;
+				var searchs=cookie_name+"=";
+				if(allcookies.length>0)								//查看cookie是否为空
+				{
+					var offset=allcookies.indexOf(searchs);			//找到要查找的变量名
+					if(offset!=-1)									//判断所查找的变量名是否存在
+					{
+							offset+=searchs.length;
+							var end=allcookies.indexOf(";",offset);	//找到变量值的结束位置
+							if(end==-1)								//防止没加“；”号的情况发生
+							{
+								end=allcookies.length;				//取得cookie的长度
+							}
+							value=unescape(allcookies.substring(offset,end));//取得变量的值
+					}
+					else
+					{
+						value=null;									//将变量value赋为空
+					}
+				}
+				return value;										//返回变量vaue的值
+			}	
+		</script>										
+		</head>											
+	<body>											
+		<input type="submit" name="Submit" value="设置cookie值" onClick="setCookie()">
+		<input type="submit" name="Submit2" value="读取cookie值" onClick="alert(getCookie('username'))">
+	 </body>   										
+</html>

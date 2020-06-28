@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>范例4-0</title>
+</head>
+<body>
+<script language="javascript">
+<!--
+    var students = new Array( "Tom", "Petter", "Jim", "Lily" );	// 学生名字
+    document.write( "排序前：" + students );			        // 输出排序前的名字序列
+    for( n in students )					                    // 在for语句中使用in运算符遍历数组
+    {
+        for( m in students )					                // 逐一比较							
+        {
+            if( students[n] < students[m] )			            // 使用“<”运算会进行升序比较
+            {
+                var temp = students[n];				            // 交换数组元素内容
+                students[n] = students[m];
+                students[m] = temp;
+            }
+        }
+    }
+    document.write( "<br>" );					                // 输出换行
+    document.write( "排序后：" + students );			        // 输出排序后的名字序列
+--> 
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+// MessageBoard.idl : MessageBoard 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(MessageBoard.tlb)和封送处理代码。
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(68E6F40D-93EB-4F19-AF78-7496632C84AC),
+	dual,
+	nonextensible,
+	helpstring("IMsgBoardCtl 接口"),
+	pointer_default(unique)
+]
+interface IMsgBoardCtl : IDispatch{
+	[propget, id(1), helpstring("属性 msgText")] HRESULT msgText([out, retval] BSTR* pVal);
+	[propput, id(1), helpstring("属性 msgText")] HRESULT msgText([in] BSTR newVal);
+};
+
+[
+	uuid(5F26A915-5F7E-46E3-9205-8E8C4882F22A),
+	version(1.0),
+	helpstring("MessageBoard 1.0 类型库")
+]
+library MessageBoardLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(DDD0279B-BD9B-4D09-88B5-5EFED63DADAB),
+		helpstring("_IMsgBoardCtlEvents 接口")
+	]
+	dispinterface _IMsgBoardCtlEvents
+	{
+		properties:
+		methods:
+			[id(1), helpstring("方法ClickIn")] void ClickIn([in] LONG x, [in] LONG y);
+	};
+	[
+		uuid(F9C695B2-5569-4F28-88FD-D9EB4E41055E),
+		control,
+		helpstring("MsgBoardCtl Class")
+	]
+	coclass MsgBoardCtl
+	{
+		[default] interface IMsgBoardCtl;
+		[default, source] dispinterface _IMsgBoardCtlEvents;
+	};
+};

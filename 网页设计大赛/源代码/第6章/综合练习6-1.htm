@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>综合练习6-1</title>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+function Button1_onclick()
+{
+    try
+    {
+        var cmdWin = document.getElementById("TextArea1");  // 获取文本框的引用
+        var str = "try{" + cmdWin.value + "}catch(e){alert('你的代码有错：'+e.description);}";// 构造函数体
+        var cmd = new Function(str);    // 构造函数
+        cmd();                          // 调用函数
+    }
+    catch(e)                            
+    {
+        alert("错误："+e.description);  // 输出错误信息
+    }
+}
+// ]]>
+</script>
+</head>
+<body>
+<!--用户界面，一文本框，一按钮-->
+    <div align="center" style="border-right: #000000 1px solid; border-top: #000000 1px solid; border-left: #000000 1px solid;
+        width: 618px; border-bottom: #000000 1px solid; height: 336px; background-color: #ffffff">
+        <textarea id="TextArea1" style="width: 612px; height: 300px"></textarea>
+        <input id="Button2" type="button" value="执行程序" onclick="return Button1_onclick()" style="width: 145px" /></div>
+</body>
+</html>

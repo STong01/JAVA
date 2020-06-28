@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN""http://www.w3.org/TR/REC-html140/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title></title>
+<script language="JavaScript" type="text/javascript">
+<!--
+
+function testIp(obj)					//检验文本框中信用卡卡号格式是否正确   
+{   
+	var msg="";
+	var str=obj.m_num.value;			//取得用户的输入
+	
+  var regex=/(?=com)/;   
+  if (!regex.exec(str)) 				//查找匹配,如果没有则返回 null否则就返回一个数组
+  {
+    msg+="您输入的格式不正确! ";		//提示用户输入格式不正确
+    alert(msg);
+    obj. m_num.focus(); 				//获得焦点，表单不提交 
+  }
+  else
+  {
+    msg+="输入的格式正确! ";			//提示用户输入格式正确
+    alert(msg);
+    return true;						//提交表单
+  }   
+}
+-->
+</script>
+</head>
+<body>
+<center>
+<p>请输入您的域名以com结尾</p> 
+<form onSubmit="return testIp(this);"> 	<!--表单-->   　
+  <input type="text" name="m_num">		<!--输入文本-->
+  <input type="submit" value="确定">	<!--提交按钮-->
+</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>范例4-21</title>
+</head>
+<body>
+<script language="javascript">
+<!--
+    var user = "foxun";                                         // 用户名
+    var password = 123456;                                      // 密码，需要对其加密
+    var key = 666666;                                           // 加密密钥
+    var codedpassword = password ^ key;                         // 将明文密码123456加密
+    alert( "加密后的密码：" + codedpassword );                  // 输出加密后的密
+    codedpassword ^= key;                                       // 将加密后的密码解密
+    alert( "解密后的密码：" + codedpassword );                  // 输出解密后的密码
+--> 
+</script>
+</body>
+</html>

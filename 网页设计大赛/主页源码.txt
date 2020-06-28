@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Our Provence</title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <!--<meta content="width=device-width, initial-scale=1" name="viewport">-->
+    <meta content="Our Provence" name="description">
+    <meta content="BdgPixel" name="author">
+    <!--Fav-->
+    <link href="images/favicon.ico" rel="shortcut icon">
+    
+    <!--styles-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    
+    <!--fonts google-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    
+    <!--[if lt IE 9]>
+       <script type="text/javascript" src="js/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+   
+    <div class="header">
+      <div class="for-sticky">
+        <!--LOGO-->
+        <div class="col-md-2 col-xs-6 logo">
+          <a href="index.html"><img alt="logo" class="logo-nav" src="images/logo.png"></a>
+        </div>
+        <!--/.LOGO END-->
+      </div>
+      <div class="menu-wrap">
+        <nav class="menu">
+          <div class="menu-list">
+            <a data-scroll="" href="#home" class="active">
+              <span>Home</span>
+            </a>
+            <a data-scroll="" href="#about">
+              <span>About</span>
+            </a>
+            <a data-scroll="" href="#work">
+              <span>Introduction</span>
+            </a>
+            
+            <a data-scroll="" href="#testimonial">
+              <span>A word or two </span>
+            </a>
+           
+          </div>
+        </nav>
+        <button class="close-button" id="close-button">Close Menu</button>
+      </div>
+      <button class="menu-button" id="open-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button><!--/.for-sticky-->
+    </div>
+    <!--/.HEADER END-->
+    
+    <!--CONTENT WRAP-->
+    <div class="content-wrap">
+      <!--CONTENT-->
+      <div class="content">
+        <!--HOME-->
+        <section id="home">
+          <div class="container">
+            <div class="row">
+              <div class="wrap-hero-content">
+                  <div class="hero-content">
+                    <h1>“Welcome to our Provence”</h1>
+                    <br>
+                    <!--<span class="typed"></span>-->
+                  </div>
+              </div>
+            
+            </div>
+          </div>
+        </section>
+        <!--/.HOME END-->
+
+        <!--ABOUT-->
+        <section id="about">
+          <div class="col-md-6 col-xs-12 no-pad">
+            <div class="bg-about"></div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12 white-col">
+            <div class="row">
+              <!--OWL CAROUSEL2-->
+              <div class="owl-carousel2">
+                <div class="col-md-12">
+                  <div class="wrap-about">
+                    <div class="w-content">
+                      <p class="head-about">
+                         <h3>我是一个忙碌的都市人<p></h3>
+                         <h3>我享受着繁华<p></h3>
+                         <h3>但却失去了宁静<p></h3>
+                         <h3>我想逃离这一切<p></h3>
+                         <h3>这时，我找到了普罗旺斯<p></h3>
+                      </p>
+                      
+
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-md-12 col-sm-12 col-xs-12 white-col">
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+                      <div class="wrap-about">
+                        <table class="w-content">
+                          <tr>
+                            <td class="title"><h4>name</h4> </td>
+                            <td class="break"><h4>:</h4></td>
+                            <td> <h4>Provence in your mind</h4></td>
+                          </tr>
+                          <tr>
+                            <td class="title"> <h4>where</h4></td>
+                            <td class="break"><h4>:</h4></td>
+                            <td> <h4>everywhere</h4></td>
+                          </tr>
+                          <tr>
+                            <td class="title"><h4>Email</h4></td>
+                            <td class="break"><h4>:</h4></td>
+                            <td> <h4>heart@Provence.com</h4></td>
+                          </tr>
+                          <tr>
+                            <td class="title"><h4>Address</h4> </td>
+                            <td class="break"><h4>:</h4></td>
+                            <td> <h4>Your heart</h4></td>
+                          </tr>
+                          <tr>
+                            <td class="title"><h4>Attributes</h4>  </td>
+                            <td class="break"><h4>:</h4></td>
+                            <td> <h4>comfortable,cheerful</h4></td>
+                          </tr>
+                          
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/.OWL CAROUSEL2 END-->
+            </div>
+          </div>
+        </section>
+        <!--/.ABOUT END-->
+
+        <!--WORK-->
+        <section class="grey-bg mar-tm-10" id="work">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <h3 class="title-small">
+                  <span>Introduction</span>
+                </h3>
+                <p class="content-detail">
+                一面涂鸦墙也可以是心中的普罗旺斯，在繁忙的都市，太多“条条框框”限制我们的追求自由的脚步，于是便出现的涂鸦墙。
+                  <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+樱桃开始红了，葡萄藤也覆盖上了喜人的嫩绿色新叶，不再是冬天的枯朽模样。远山青苍柔婉，如一条翠绿色的腰带，悬挂在天边。轮子在地面摩擦出有规律的声响，载着我们从一丛丛迷迭香、熏衣草或是百里香的气味中飘过。
+                  <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+离天堂最近的地方！空气中弥散着浓浓的酥油味，夹杂着牛羊肉的腥膻味，走在烟雾缭绕的八角街，朝圣的、叩长头的、喇嘛、游客、中国人、外国人、乞讨者、小商贩，招呼声、讨价声，一下子令我迷失了 ...... 带着虔诚、带着向往、带着理想、带着梦想、带着 ......              
+                </p>
+              </div>
+              <div class="col-md-9 content-right">
+                <!--PORTFOLIO IMAGE-->
+                <ul class="portfolio-image">
+                  <li class="col-md-6">
+                    <a href="images/墨尔本2.jpg"><img alt="image" src="images/墨尔本2.jpg">
+                 
+                    </a>
+                  </li>
+                  <li class="col-md-6">
+                    <a href="images/paris.jpg"><img alt="image" src="images/paris.jpg">
+                    
+                    </a>
+                  </li>
+                  <li class="col-md-6">
+                    <a href="images/圣托里尼 (4).jpg"><img alt="image" src="images/圣托里尼 (4).jpg">
+                    
+                    </a>
+                  </li>
+                  <li class="col-md-6">
+                    <a href="images/圣托里尼.jpg"><img alt="image" src="images/圣托里尼.jpg">
+                     
+                    </a>
+                  </li>
+                  <li class="col-md-6">
+                    <a href="images/圣托里尼 (3).jpg"><img alt="image" src="images/圣托里尼 (3).jpg">
+                      
+                    </a>
+                  </li>
+                  <li class="col-md-6">
+                    <a href="images/圣托里尼 (2).jpg"><img alt="image" src="images/圣托里尼 (2).jpg">
+                      
+                    </a>
+                  </li>
+                </ul>
+                <!--/.PORTFOLIO IMAGE END-->
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--/.WORK END-->
+
+
+        
+        <!--TESTIMONIAL-->
+        <section id="testimonial">
+          <div class="container">
+            <div class="row wrap-testimonial">
+              <div class="col-md-10 col-md-offset-1">
+                <div class="owl-carousel">
+                  <div class="list-testimonial">
+                    <div class="content-testimonial">
+                      <h3 class="testi">
+                        “绿蚁新醅酒，红泥小火炉。晚来天欲雪，能饮一杯无？”
+                      </h3>
+                      <p class="people">
+                        唐-白居易-《问刘十九》
+                      </p>
+                    </div>
+                  </div>
+                  <div class="list-testimonial">
+                    <div class="content-testimonial">
+                     
+                       <h3 class="testi">
+                       “我轻松愉快走上大路，我健康自由，世界在我面前，长长褐色的大路在我面前，指向我想去的任何地方。”
+                      </h3>
+                      <p class="people">
+                        Walt Whitman—《SONG OF OPEN ROAD》
+                      </p>
+                    </div>
+                  </div>
+                  <div class="list-testimonial">
+                    <div class="content-testimonial">
+                      <h3 class="testi">
+                        “装饰一行诗,绝非我的梦；只有住在瓦尔登湖之滨,才能与上帝和天国最近.我就是它的卵石湖岸,是吹拂过它的微风；我的手心里,捧着它的水,它的沙,而它最深的度假地,高居在我的心中.”
+                      </h3>
+                      <p class="people">
+                        梭罗-《瓦尔登湖》
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mask-testimonial"></div>
+        </section>
+        <!--/.TESTMONIAL END-->
+
+
+       
+      <!--/.CONTENT END-->
+      </div>
+    <!--/.CONTENT-WRAP END-->
+    </div>
+    
+
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.appear.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/classie.js" type="text/javascript"></script>
+    <script src="js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+    <script src="js/masonry.pkgd.min.js" type="text/javascript"></script>
+    <script src="js/masonry.js" type="text/javascript"></script>
+    <script src="js/smooth-scroll.min.js" type="text/javascript"></script>
+    <script src="js/typed.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
+</html>

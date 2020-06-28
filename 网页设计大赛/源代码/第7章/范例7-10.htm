@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>范例7-10</title>
+</head>
+<body>
+<h1>slice方法的作用</h1>
+<script language="javascript">
+    var queueA = new Array();                                           // 体操队列A
+    queueA.push( "学生A", "学生B", "学生C", "学生D", "学生E", "学生F"); // 队员进队
+    queueA = queueA.slice( 1, 4 );                                      // 切取第2个到第3个元素作为新数组
+    alert( queueA );                                                    // 输出切取出来的数组
+</script>
+</body>
+</html>

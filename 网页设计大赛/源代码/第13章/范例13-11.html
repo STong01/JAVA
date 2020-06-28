@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>文本框的事件</title>
+	<script language="javascript">
+	function count()
+	{
+		var len=form1.text.value.length;				//取得文本中字符的长度，并赋值给len						
+		form1.text2.value="您输入的字符数为"+len+"个";	//显示文本框图1中字符串的长度
+	}	
+	</script>
+</head>
+<body>
+	<form id="form1" name="form1" method="post" action="">
+	
+	  <label> <br />
+	  请在这里输入文字：
+	  <textarea name="text" onkeyup="count()"></textarea>
+	  </label>
+	  <textarea name="text2" id="text2"></textarea>
+	  <p>
+	    <label></label>
+	  </p>
+	</form>
+</body>
+</html>

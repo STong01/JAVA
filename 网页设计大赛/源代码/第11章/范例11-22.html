@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+<title>范例11-19</title> 
+</head> 
+<body> 
+<p><a href="http://www.163.com">http://www.163.com</a></p>
+<p><a href="http://www.sohu.com">http://www.sohu.com</a></p>
+<p><a href="http://www.21cn.com">http://www.21cn.com</a></p>
+<p><a href="http://www.sina.com">http://www.sina.com</a> 
+<script type="text/javascript"> 
+function showLinks()
+{
+	links=document.all.tags("a");  //取得页面所的超链接，存放在links数组中
+	var str="";	
+	k=0;
+	for(i in links)
+	{	
+		// 其地址下标是从1开始的,当下标为0时，表示链接个数，将值取出来放在str中
+		if(k!=0)str+=links[i]+"\n";
+		k++;
+	}
+	alert("一共有"+links.length+"个链接，分别是:\n"+str);
+} 
+</script> 
+</p>
+<p>
+  <label>
+  <input type="submit" name="Submit" value="查看超链接" onclick="showLinks()" />
+  </label>
+</p>
+</body> 
+</html>

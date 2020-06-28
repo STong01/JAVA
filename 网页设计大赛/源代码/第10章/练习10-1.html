@@ -1,0 +1,14 @@
+<script language="JavaScript">							// 程序开始
+function Apply()								// 应用更改
+{
+	document.bgColor=BGCLR.value;						// 设置背景色
+	document.fgColor=FTCLR.value;						// 设置字体颜色
+	window.resizeTo(parseInt(WIDTH.value), parseInt(HEIGHT.value)); 	// 设置窗口尺寸
+}
+</script>									// 程序结束
+背景颜色：<input type="text" value="#333333" id="BGCLR"><br>			<!--背景-->
+字体颜色：<input type="text" value="#000000" id="FTCLR"><br>			<!--字体-->
+窗口宽度：<input type="text" value="800" id="WIDTH"><br>			<!--宽度-->
+窗口高度：<input type="text" value="600" id="HEIGHT">				<!--高度-->
+<input type="button" value="应用更改" onClick="Apply()">			<!--按钮-->
+

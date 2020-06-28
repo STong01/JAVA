@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>范例4-22</title>
+</head>
+<body>
+<script language="javascript">
+<!--
+    var msg = "正数取反：";
+    for( i = 0; i<50; i++ )                         // 连续对0到49进行位取反，并逐一添加输出字符串
+    {
+        msg += i + "=>" + (~i) + " ";
+    }
+    msg += "\n负数取反：";
+    for( i = -50; i<0; i++ )                        // 连续对-50到-1进行位取反，并逐一添加到输出字符串
+    {
+        msg += i + "=>" + (~i) + " ";
+    }
+    msg += "\n布尔值取反：";
+    var b1 = true;                                  // 对布尔值true和false按位取反，并添加到输出字符串
+    msg += b1 + "=>" + (~b1) + " ";
+    var b2 = false;
+    msg += b2 + "=>" + (~b2) + " ";
+    msg += "\n字符串取反：";
+    var name = "Bob";                               // 对布尔值字符串按位取反，并添加到输出字符串
+    msg += "\"" + name + "\"" + "=>" + (~name) + " ";
+    alert( msg );                                   // 输出
+--> 
+</script>
+</body>
+</html>

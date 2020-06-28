@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>范例4-18</title>
+</head>
+<body>
+<script language="javascript">
+<!--
+function Button1_onclick()
+{
+    var isRegistered = true;            // 注册用户
+    var level = 3;                      // 级数为3
+    var blance = 25;                    // 账户余额
+    if( isRegistered && ( level >= 2 ) && ( blance >= 30 ) )  // 必须是注册用户、等级大于等于2、余额大于30
+    {
+        alert( "您可以下载本资源" );    // 当前用户条件都满足时
+    }
+    else
+    {
+        alert( "您不能下载本资源" );    // 至少有一个条件不满足时
+    }
+}
+--> 
+</script>
+    点击下载本影片
+    <input id="Button1" type="button" value="下载" onclick="return Button1_onclick()" />
+</body>
+</html>

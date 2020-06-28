@@ -1,0 +1,57 @@
+<title>综合练习2-1</title>
+<script language="javascript">
+<!--
+	var score = new Array( 	"王勇", 50,			// 分数表
+				"白露", 60,
+				"杨杨", 76,
+				"李明", 83,
+				"张莉莉", 70,
+				"杨宗楠", 71,
+				"徐霞", 66,
+				"杨玉婷", 93
+			     );
+	var namesOf_0To59 = "";					// 存储各分数段人学生名字的变量
+	var namesOf_60To69 = "";
+	var namesOf_70To79 = "";
+	var namesOf_80To89 = "";
+	var namesOf_90To100 = "";
+	var scoreSum = 0;
+	document.write( "<b>《高等数学》成绩统计表</b><br>" );	// 标题
+	for( index in score )
+	{
+		
+		if( index%2==1 )// 如果当前元素索引为奇数，则该元素为分数,其前一个元素即为该分数的学生名字
+		{
+			// 判断当前分数所在的分数段并将学生名字存入相应变量
+			if( (score[index]>=0) && (score[index]<=59) )
+			{
+				namesOf_0To59 += score[index-1] + " ";
+			}
+			if( (score[index]>=60) && (score[index]<=69) )
+			{
+				namesOf_60To69 += score[index-1] + " ";
+			}
+			if( (score[index]>=70) && (score[index]<=79) )
+			{
+				namesOf_70To79 += score[index-1] + " ";
+			}
+			if( (score[index]>=80) && (score[index]<=89) )
+			{
+				namesOf_80To89 += score[index-1] + " ";
+			}
+			if( (score[index]>=90) && (score[index]<=100) )
+			{
+				namesOf_90To100 += score[index-1] + " ";
+			}
+			scoreSum += score[index];			// 统计分数	
+		}
+	}
+	document.write( "<li>00~59分：" + namesOf_0To59 + "<br>" );	// 分别输出各分数段的学生
+	document.write( "<li>60~69分：" + namesOf_60To69 + "<br>" );
+	document.write( "<li>70~79分：" + namesOf_70To79 + "<br>" );
+	document.write( "<li>80~89分：" + namesOf_80To89 + "<br>" );
+	document.write( "<li>90~100分：" + namesOf_90To100 + "<br>" );
+	// 数组元素个数除以2即为人数，总分除以人数即得平均分
+	document.write( "<li>平均分 ：" + scoreSum/(score.length/2) + "<br>" );
+-->
+</script>
