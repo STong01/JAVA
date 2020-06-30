@@ -1,0 +1,49 @@
+files = dir(fullfile('C:\Users\86155\Documents\附件A题bmp\','*.bmp')); %以bmp格式读取文件
+p = length(files);%p为图片的个数
+CP=zeros(100,2);%中心点坐标
+R=zeros(100,1);%血管半径
+for k = 1:p
+    A = imread(strcat('C:\Users\86155\Documents\附件A题bmp\',files(k).name));%文件里面的图片转换为A（0白，1黑矩阵）
+    %disp(strcat('C:\Users\Administrator\Desktop\sd\',files(k).name)) %打印文件路径
+   % imshow(A)
+    
+    
+    %转换 ：将0转为1，1转为0
+    for i=1:512
+        for j=1:512
+            if A(i,j)==0
+                A(i,j)=1;
+            else
+                A(i,j)=0;
+            end
+        end
+    end
+    
+    GJ=bwmorph(A,'skel',inf);%提取图形骨架
+    B=im2bw(A);
+    LK=bwperim(B);%C是轮廓
+    [x0,y0]=find(LK);%找到轮廓的点
+    [a0,b0]=find(GJ);%找到骨架的点
+    
+     m=length(a0);%m为骨架点的数量
+     n=length(x0);%n为轮廓的点的数量
+     S=zeros(m,1);%s存放的是骨架上面的点到轮廓上的各个点的距离的最小值
+     JL=zeros(n,1);%存放骨架到轮廓点的距离
+
+     for i=1:m
+         for j=1:n
+             JL(j)=sqrt((a0(i)-x0(j))^2+(b0(i)-y0(j))^2);  
+         end
+        S(i)= min(JL);
+       
+     end
+     R(k)=max(S);%r为所有骨架到轮廓点的各个距离的最大值
+     G=find(S==R(k));%G中存的是再各个距离中找到表示最大距离的点并返回
+     H=G(1);%H中存放G里面的每个点的位置
+     Ox=a0(H);
+     Oy=b0(H);
+     O=[Ox,Oy];%g，h用来表示点的坐标
+     CP(k,:)=O;%将各个点的坐标返回到表示中心点的矩阵里面，k每变一次就执行一次
+end
+z=0:99;
+P=[CP z' R]    %p中存放的是中心点的x，y，z，以及半径r的所有值
